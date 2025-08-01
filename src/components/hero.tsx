@@ -1,0 +1,267 @@
+'use client'
+import React, { useRef, useEffect } from 'react';
+import Image from 'next/image';
+import { assets } from '@/assets/assets';
+
+const HeroSection = () => {
+    const carousel1Ref = useRef<HTMLDivElement>(null);
+    const carousel2Ref = useRef<HTMLDivElement>(null);
+
+    // First 4 carousel images (left column)
+    const carousel1Images = [
+        assets.carousel_1,
+        assets.carousel_2,
+        assets.carousel_3,
+        assets.carousel_4
+    ];
+
+    // Last 4 carousel images (right column)
+    const carousel2Images = [
+        assets.carousel_5,
+        assets.carousel_6,
+        assets.carousel_7,
+        assets.carousel_8
+    ];
+
+    useEffect(() => {
+        const carousel1 = carousel1Ref.current;
+        const carousel2 = carousel2Ref.current;
+        
+        if (!carousel1 || !carousel2) return;
+
+        let animationId1: number;
+        let animationId2: number;
+        
+        const scrollSpeed = 1; // pixels per frame (adjust for faster/slower scrolling)
+
+        const autoScroll1 = () => {
+            if (carousel1) {
+                carousel1.scrollTop += scrollSpeed;
+                
+                // Reset to beginning when reaching the end of first set
+                if (carousel1.scrollTop >= carousel1.scrollHeight / 3) {
+                    carousel1.scrollTop = 0;
+                }
+            }
+            animationId1 = requestAnimationFrame(autoScroll1);
+        };
+
+        const autoScroll2 = () => {
+            if (carousel2) {
+                carousel2.scrollTop -= scrollSpeed;
+                
+                // Reset to end when reaching the beginning (since scrolling up)
+                if (carousel2.scrollTop <= 0) {
+                    carousel2.scrollTop = carousel2.scrollHeight / 3;
+                }
+            }
+            animationId2 = requestAnimationFrame(autoScroll2);
+        };
+
+        // Initialize scroll positions
+        carousel1.scrollTop = 0;
+        carousel2.scrollTop = carousel2.scrollHeight / 3;
+
+        // Start auto-scrolling
+        autoScroll1();
+        autoScroll2();
+
+        // Pause on hover
+        const handleMouseEnter = () => {
+            cancelAnimationFrame(animationId1);
+            cancelAnimationFrame(animationId2);
+        };
+
+        const handleMouseLeave = () => {
+            autoScroll1();
+            autoScroll2();
+        };
+
+        carousel1.addEventListener('mouseenter', handleMouseEnter);
+        carousel1.addEventListener('mouseleave', handleMouseLeave);
+        carousel2.addEventListener('mouseenter', handleMouseEnter);
+        carousel2.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+            cancelAnimationFrame(animationId1);
+            cancelAnimationFrame(animationId2);
+            if (carousel1) {
+                carousel1.removeEventListener('mouseenter', handleMouseEnter);
+                carousel1.removeEventListener('mouseleave', handleMouseLeave);
+            }
+            if (carousel2) {
+                carousel2.removeEventListener('mouseenter', handleMouseEnter);
+                carousel2.removeEventListener('mouseleave', handleMouseLeave);
+            }
+        };
+    }, []);
+
+    return (
+        <div className="bg-white">
+            {/* Desktop Version */}
+            <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-6 ">
+                {/* Left Content */}
+                <div className="flex-1 max-w-lg">
+                    <div className="text-[16px] font-medium text-gray-600 uppercase tracking-wide mb-4">
+                        AI POWERED EVENT PLATFORM
+                    </div>
+
+                    <h1 className="text-5xl font-bold leading-tight mb-6">
+                        Run <span className="gradient-text">Smarter</span> Events,<br />
+                        <span className="gradient-text">Connect</span> Every Guest
+                    </h1>
+
+                    <p className="text-gray-600 text-[20px] mb-8 leading-relaxed font-normal">
+                        Guests skip the awkward intros with smart digital cards, while you
+                        stay in full control of your event and our AI-powered assistant
+                        does the heavy lifting for everyone.
+                    </p>
+
+                    <button className="bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8">
+                        Create Your First Event
+                    </button>
+
+                    <div className="flex items-center space-x-3">
+                        <div className="flex -space-x-2">
+                            <div className="w-8 h-8 bg-gray-300 rounded-full border-2 border-white">
+                                <Image src={assets.ellipse17} alt='ys' />
+                            </div>
+                            <div className="w-8 h-8 bg-gray-400 rounded-full border-2 border-white">
+                                <Image src={assets.ellipse18} alt='ys' />
+                            </div>
+                            <div className="w-8 h-8 bg-gray-500 rounded-full border-2 border-white">
+                                <Image src={assets.ellipse19} alt='ys' />
+                            </div>
+                            <div className="w-8 h-8 bg-gray-500 rounded-full border-2 border-white">
+                                <Image src={assets.ellipse20} alt='ys' />
+                            </div>
+                        </div>
+                        <span className="text-gray-600 text-sm">
+                            Join the <span className="gradient-text">thousands</span> of event pros who swear by us
+                        </span>
+                    </div>
+                </div>
+
+                {/* Right Carousel Container - Desktop with Auto-Scrolling */}
+                <div className="flex-shrink-0 ml-12 h-[800px] w-[450px] relative overflow-hidden">
+                    {/* First Column - Auto scrolling down */}
+                    <div 
+                        ref={carousel1Ref}
+                        className="absolute left-0 w-[200px] h-full overflow-hidden"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
+                        <div className="space-y-4">
+                            {/* Triple the images for seamless infinite scroll */}
+                            {[...carousel1Images, ...carousel1Images, ...carousel1Images].map((img, index) => (
+                                <div key={index} className="w-[200px] h-[350px] bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
+                                    <Image 
+                                        src={img} 
+                                        alt={`Carousel 1 Image ${index % 4 + 1}`} 
+                                        className="w-[200px] h-[350px] object-cover" 
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Second Column - Auto scrolling up */}
+                    <div 
+                        ref={carousel2Ref}
+                        className="absolute right-0 w-[200px] h-full overflow-hidden"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
+                        <div className="space-y-4">
+                            {/* Triple the images for seamless infinite scroll */}
+                            {[...carousel2Images, ...carousel2Images, ...carousel2Images].map((img, index) => (
+                                <div key={index} className="w-[200px] h-[350px] bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
+                                    <Image 
+                                        src={img} 
+                                        alt={`Carousel 2 Image ${index % 4 + 1}`} 
+                                        className="w-[200px] h-[350px] object-cover" 
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Mobile Version */}
+            <div className="md:hidden px-4 py-8">
+                {/* Header */}
+                <div className="text-center mb-8">
+                    <div className="text-xs text-gray-600 uppercase tracking-wide mb-3">
+                        AI POWERED EVENT PLATFORM
+                    </div>
+
+                    <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+                        Run <span className="gradient-text">Smarter</span> Events,<br />
+                        <span className="gradient-text">Connect</span> Every Guest
+                    </h1>
+
+                    <p className="text-gray-600 text-base mb-6 leading-relaxed max-w-sm mx-auto">
+                        While you stay in full control of your event,
+                        let our AI assistant handle the hard work and
+                        awkward networking.
+                    </p>
+
+                    <button className="bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8">
+                        Create Your First Event
+                    </button>
+                </div>
+
+                {/* Mobile Carousel - Single Row with 4 Images */}
+                <div className="flex justify-center mb-8">
+                    <div className="grid grid-cols-4 gap-2 w-full max-w-sm">
+                        <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
+                            <Image src={assets.carousel_1} alt='img1' className="w-[85.71px] h-[120px] object-cover" />
+                        </div>
+                        <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
+                            <Image src={assets.carousel_2} alt='img2' className="w-[85.71px] h-[120px] object-cover" />
+                        </div>
+                        <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
+                            <Image src={assets.carousel_3} alt='img3' className="w-[85.71px] h-[120px] object-cover" />
+                        </div>
+                        <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
+                            <Image src={assets.carousel_4} alt='img4' className="w-[85.71px] h-[120px] object-cover" />
+                        </div>
+                        <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
+                            <Image src={assets.carousel_5} alt='img5' className="w-[85.71px] h-[120px] object-cover" />
+                        </div>
+                        <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
+                            <Image src={assets.carousel_6} alt='img6' className="w-[85.71px] h-[120px] object-cover" />
+                        </div>
+                        <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
+                            <Image src={assets.carousel_7} alt='img7' className="w-[85.71px] h-[120px] object-cover" />
+                        </div>
+                        <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
+                            <Image src={assets.carousel_8} alt='img8' className="w-[85.71px] h-[120px] object-cover" />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Mobile Bottom Section */}
+                <div className="text-center">
+                    <div className="flex items-center justify-center space-x-3">
+                        <div className="flex -space-x-2">
+                            <div className="w-6 h-6 bg-gray-300 rounded-full border-2 border-white"></div>
+                            <div className="w-6 h-6 bg-gray-400 rounded-full border-2 border-white"></div>
+                            <div className="w-6 h-6 bg-gray-500 rounded-full border-2 border-white"></div>
+                        </div>
+                        <span className="text-gray-600 text-xs">
+                            Join the <span className="text-pink-500 font-medium">thousands</span> of event pros who swear by us
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <style jsx>{`
+                .scrollbar-hide::-webkit-scrollbar {
+                    display: none;
+                }
+            `}</style>
+        </div>
+    );
+};
+
+export default HeroSection;
