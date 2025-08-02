@@ -17,7 +17,7 @@ const feature = () => {
               Love Our Platform
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl whitespace-nowrap">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl">
             We&apos;ve reimagined event networking from the ground up. Here&apos;s what makes us different.
           </p>
         </div>
@@ -42,7 +42,7 @@ const feature = () => {
         alt={feature.title}
         width={48}
         height={48}
-        className="object-contain"
+        className="object-contain "
       />
       </div>
 
@@ -62,6 +62,8 @@ const feature = () => {
       </div>
     </div>
     </div>
+
+    
   )
 }
 

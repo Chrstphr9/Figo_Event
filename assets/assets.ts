@@ -14,6 +14,10 @@ import ellipse20 from './Ellipse20.png'
 import menu from './menu.png'
 import wrist from './image 2.png'
 import arrow from './arrow.png'
+import wristband from './Link2.png'
+import card from './Link3.png'
+import ring from './Link4.png'
+import play from './play.png'
 
 
 
@@ -35,7 +39,11 @@ export const assets = {
     ellipse20,
     menu,
     wrist,
-    arrow
+    arrow,
+    wristband,
+    card,
+    ring,
+    play,
 }
 
 

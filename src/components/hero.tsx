@@ -102,7 +102,7 @@ const HeroSection = () => {
             <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-6 ">
                 {/* Left Content */}
                 <div className="flex-1 max-w-lg">
-                    <div className="text-[16px] font-medium text-gray-600 uppercase tracking-wide mb-4">
+                    <div className="w-70 h-10 py-3 px-4 text-[16px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-4 rounded-full">
                         AI POWERED EVENT PLATFORM
                     </div>
 
