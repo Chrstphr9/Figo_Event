@@ -46,7 +46,7 @@ const VideoSection = () => {
                 Near You
               </p>
             </div>
-            <button className="text-sm sm:text-base text-purple-600 hover:text-purple-700 font-medium flex items-center transition-colors duration-200 group">
+            <button className="text-sm sm:text-base text-black font-medium flex items-center cursor-pointer">
               View All
               <svg 
                 className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" 
