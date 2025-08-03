@@ -18,6 +18,8 @@ import wristband from './Link2.png'
 import card from './Link3.png'
 import ring from './Link4.png'
 import play from './play.png'
+import event1 from './Event1.png'
+import event2 from './Event2.png'
 
 
 
@@ -44,6 +46,8 @@ export const assets = {
     card,
     ring,
     play,
+    event1,
+    event2
 }
 
 
