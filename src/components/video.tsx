@@ -13,7 +13,7 @@ const VideoSection = () => {
             <div className="relative bg-[#FAF8FF] rounded-[inherit] p-6 sm:p-8 md:p-12">
               <div className="text-center">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">
-                  See How We're Redefining Events
+                  See How We&apos;re Redefining Events
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">
                   Watch our Quick Intro
@@ -106,7 +106,7 @@ const VideoSection = () => {
                   <p className=" text-[12px] sm:text-[16px] sm:text-sm text-black mt-[5px] sm:mt-[15px] truncate font-medium">
                     Iris Vineyard
                   </p>
-                  <p className="text-[12px] sm:text-[16px] font-semibold text-[#000000]/70 mt-[25px] sm:mt-[40px]">
+                  <p className="text-[12px] sm:text-[16px]  sm:font-normal text-[#000000]/70 mt-[25px] sm:mt-[40px]">
                     Tomorrow, 4:00 PM
                   </p>
                 </div>

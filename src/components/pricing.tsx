@@ -21,7 +21,7 @@ const pricing = () => {
     <section className="w-full bg-gray-50 py-12 px-4 sm:py-16 md:py-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-12 sm:mb-16 ">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Pricing plans
           </h2>
@@ -34,10 +34,10 @@ const pricing = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           
           {/* Pay-Per-Event Plan */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 relative]">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 text-center">
             {/* Plan Header */}
-            <div className="bg-[#A947FF]/20 rounded-xl p-4 mb-6">
-              <h3 className=" bg-white rounded-4xl text-lg sm:text-xl font-semibold text-gray-900 mb-8 px-4 py-2 w-[190px]">
+            <div className="bg-[#A947FF]/20 rounded-xl p-4 mb-6 flex flex-col items-center">
+              <h3 className=" bg-white rounded-4xl text-lg sm:text-xl font-semibold text-gray-900 mb-8 px-4 py-2 w-[190px] ">
                 Pay-Per-Event
               </h3>
               <div className="flex items-baseline gap-1">
@@ -80,16 +80,16 @@ const pricing = () => {
           {/* Enterprise Plan */}
           <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 relative">
             {/* Plan Header */}
-            <div className="rounded-xl p-4 mb-6 bg-gradient-to-r from-[#A947FF33] to-[#FA59CD33]">
+            <div className="rounded-xl p-4 mb-6 bg-gradient-to-r from-[#A947FF33] to-[#FA59CD33] flex flex-col items-center">
             <h3 className=" bg-white rounded-4xl text-lg sm:text-xl font-semibold text-gray-900 mb-8 px-4 py-2 w-[190px]">
                 Enterprise Plan
               </h3>
-              <div className="flex items-baseline gap-1">
+              <div className="text-center flex items-baseline gap-1">
                 <span className="text-lg sm:text-xl font-medium text-gray-900">Unlimited attendees</span>
               </div>
             </div>
 
-            <p className="text-sm text-[#000000]/90 mb-6 font-bold">
+            <p className="text-center text-sm text-[#000000]/90 mb-6 font-medium">
               Best for Professional Event Planners
             </p>
 

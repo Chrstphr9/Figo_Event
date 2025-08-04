@@ -88,7 +88,7 @@ export default function Home() {
       <div className="hidden lg:block h-screen">
         {/* Main content centered */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4 w-full max-w-[90vw]">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] xl:text-[145.25px] font-bold text-[#553286] mb-4 relative mx-auto whitespace-nowrap">
+          <h1 className="font-space text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] xl:text-[145.25px] font-bold text-[#553286] mb-4 relative mx-auto whitespace-nowrap">
             Link Devices
             <div className="absolute top-0 right-0 w-[20vw] max-w-[200px] h-auto aspect-[482/126]">
               <Image 

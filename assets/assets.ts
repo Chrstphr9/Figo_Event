@@ -1,4 +1,5 @@
 import image1 from './image1.png';
+import image3 from './image3.png';
 import carousel_1 from './carousel_1.png';
 import carousel_2 from './carousel_2.png';
 import carousel_3 from './carousel_3.png';
@@ -20,13 +21,20 @@ import ring from './Link4.png'
 import play from './play.png'
 import event1 from './Event1.png'
 import event2 from './Event2.png'
-
+import google from './google.png'
+import apple from './apple.png'
+import qr from './qrcode.png'
+import youtube from './youtube.png'
+import linkedin from './linkedin.png'
+import x from './x.png'
+import instagram from './instagram.png'
 
 
 
 
 export const assets = {
     image1,
+    image3,
     carousel_1,
     carousel_2,
     carousel_3,
@@ -47,7 +55,14 @@ export const assets = {
     ring,
     play,
     event1,
-    event2
+    event2,
+    google,
+    apple,
+    qr,
+    youtube,
+    instagram,
+    x,
+    linkedin
 }
 
 
