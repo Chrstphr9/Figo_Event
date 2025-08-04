@@ -8,6 +8,7 @@ import Video from '@/src/components/video'
 import FAQ from '@/src/components/faq'
 import Download from '@/src/components/download'
 import Footer from '@/src/components/footer'
+import Testimonial from '@/src/components/testimonial'
 
 
 const page = () => {
@@ -20,6 +21,7 @@ const page = () => {
       <Event />
       <Pricing />
       <Video />
+      <Testimonial />
       <FAQ />
       <Download />
       <Footer />

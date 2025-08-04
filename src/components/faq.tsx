@@ -13,27 +13,27 @@ const FAQ = () => {
         {
             id: 2,
             question: "Can I track attendance and gather data for my event?",
-            answer: "Absolutely! We provide real-time attendance tracking and comprehensive analytics for your events."
+            answer: ""
         },
         {
             id: 3,
             question: "How does the check-in process work for attendees?",
-            answer: "Attendees can check in using QR codes on their tickets, which can be scanned by our mobile app or web interface."
+            answer: ""
         },
         {
             id: 4,
             question: "Can I host virtual events on your platform?",
-            answer: "Yes, we support both in-person and virtual events with integrated streaming capabilities."
+            answer: ""
         },
         {
             id: 5,
             question: "Can I create different types of events such as conferences, workshops and concerts?",
-            answer: "Our platform is versatile and supports various event types including conferences, workshops, concerts, and more."
+            answer: ""
         },
         {
             id: 6,
             question: "Do you offer customer support for event organizers?",
-            answer: "We provide 24/7 customer support to assist with any questions or issues you may encounter."
+            answer: ""
         }
     ];
 
@@ -46,7 +46,7 @@ const FAQ = () => {
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <div className="mb-8 text-center sm:mb-12">
-                    <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
+                    <h2 className="text-2xl font-bold text-gray-900 font-space sm:text-3xl md:text-4xl">
                         Frequently Asked Questions
                     </h2>
                 </div>
@@ -60,12 +60,12 @@ const FAQ = () => {
                         >
                             <button
                                 onClick={() => toggleFAQ(faq.id)}
-                                className="w-full p-4 text-left rounded-lg sm:p-6 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+                                className="w-full p-4 text-left rounded-lg sm:p-6"
                                 aria-expanded={openFAQ === faq.id}
                                 aria-controls={`faq-answer-${faq.id}`}
                             >
                                 <div className="flex items-center justify-between">
-                                    <h3 className="pr-4 text-sm font-medium text-gray-900 sm:text-base">
+                                    <h3 className="pr-4 text-sm font-medium text-gray-900 font-space sm:text-base">
                                         {faq.question}
                                     </h3>
                                     <div className="flex-shrink-0 ml-2">
@@ -98,7 +98,7 @@ const FAQ = () => {
                                 aria-hidden={openFAQ !== faq.id}
                             >
                                 <div className="px-4 pb-4 sm:px-6 sm:pb-6">
-                                    <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
+                                    <p className="text-sm leading-relaxed text-gray-600 font-space sm:text-base">
                                         {faq.answer}
                                     </p>
                                 </div>

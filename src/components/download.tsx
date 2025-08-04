@@ -4,49 +4,57 @@ import { assets } from '@/assets/assets';
 
 const EventCheckInApp = () => {
   return (
-    <div 
-      className="flex items-center justify-center" 
-      style={{
-        width: '1440px',
-        height: '420px',
-        top: '6257px',
-        left: '2px',
-        transform: 'rotate(0deg)',
-        opacity: 1
-      }}
-    >
-      <div className="w-full h-full flex flex-row items-center gap-15  px-35 rounded-3xl shadow-2xl">
+    <div className="flex items-center justify-center w-full px-4 py-10 md:py-0">
+      <div 
+        className="flex flex-col items-center w-full gap-5 px-5 py-8 md:flex-row md:gap-15 md:px-35 md:py-0 max-w-7xl"
+        style={{
+          minHeight: '300px',
+          height: 'auto'
+        }}
+      >
         
         {/* Content Section */}
-        <div className="flex-1 max-w-lg text-left ">
-          <h1 className="font-bold text-3xl leading-none tracking-normal mb-10 text-gray-800">
-            Download Our Event Check-In App &<br />
-            Provide Secure Access Into Your Events
+        <div className="flex-1 max-w-lg text-center md:text-left">
+          <h1 className="mb-6 text-2xl font-bold leading-tight tracking-normal text-gray-800 md:mb-10 md:text-3xl md:leading-none font-space">
+            Download Our Event Check-In App<br />
+            & Provide Secure Access Into Your Events
           </h1>
           
-          <div className="flex flex-row gap-5 justify-start">
+          <div className="flex flex-col justify-center gap-3 sm:flex-row md:justify-start sm:gap-5">
             {/* Google Play Button */}
             <a 
               href="#" 
-              className="inline-flex items-center gap-3 px-6 py-3  text-white rounded-xl font-semibold text-base"
+              className="inline-flex items-center justify-center gap-3 px-4 py-3 text-sm font-semibold text-white transition-opacity sm:px-6 sm:text-base rounded-xl hover:opacity-90"
             >
-             <Image src={assets.google} alt='ys' />
+              <Image 
+                src={assets.google} 
+                alt='Download on Google Play Store' 
+                className="w-auto h-8 sm:h-10"
+              />
             </a>
             
             {/* App Store Button */}
             <a 
               href="#" 
-              className="inline-flex items-center gap-3 px-6 py-3  text-white rounded-xl font-semibold text-base"
+              className="inline-flex items-center justify-center gap-3 px-4 py-3 text-sm font-semibold text-white transition-opacity sm:px-6 sm:text-base rounded-xl hover:opacity-90"
             >
-              <Image src={assets.apple} alt='ys' />
+              <Image 
+                src={assets.apple} 
+                alt='Download on Apple App Store' 
+                className="w-auto h-8 sm:h-10"
+              />
             </a>
           </div>
         </div>
         
-        {/* Phone Mockup Section */}
-        <div className="flex-1 max-w-md">
-          <div className="w-full h-full flex items-center justify-center text-white text-lg font-medium">
-          <Image src={assets.qr} alt='ys' />
+        {/* Phone Mockup Section - Hidden on mobile */}
+        <div className="flex-1 hidden max-w-md md:flex">
+          <div className="flex items-center justify-center w-full h-full text-lg font-medium text-white">
+            <Image 
+              src={assets.qr} 
+              alt='QR Code Scanner Interface' 
+              className="w-full h-auto max-w-sm"
+            />
           </div>
         </div>
         

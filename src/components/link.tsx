@@ -15,7 +15,7 @@ export default function Home() {
   <div className="relative flex flex-col items-center justify-center flex-1 text-center">
     {/* Main Title */}
     <div className="relative mb-8">
-      <h1 className="text-[40px] sm:text-5xl md:text-6xl font-bold text-[#553286] leading-tight">
+      <h1 className="font-space text-[40px] sm:text-5xl md:text-6xl font-bold text-[#553286] leading-tight">
         Link Devices
       </h1>
     </div>
@@ -104,20 +104,20 @@ export default function Home() {
 
         {/* Paragraph at bottom left */}
         <div className="absolute bottom-[60px] left-[5%] max-w-[50%]">
-          <p className="mb-4 text-xl font-bold tracking-widest text-white md:text-2xl">
+          <p className="mb-4 text-xl font-bold tracking-widest text-white font-space md:text-2xl">
             Wearables that connects you instantly
           </p>
-          <p className="text-xl font-light tracking-widest text-white md:text-2xl">
+          <p className="text-xl font-light tracking-widest text-white font-space md:text-2xl">
             No phone. No awkward intro. Just a tap
           </p>
         </div>
 
         {/* Buttons at bottom right */}
         <div className="absolute bottom-[110px] right-[5%] flex space-x-4">
-          <button className="px-6 py-3 bg-[#5E688980] font-medium text-base md:text-lg text-[#111111] rounded-full min-w-[134px]">
+          <button className="font-space px-6 py-3 bg-[#5E688980] font-medium text-base md:text-lg text-[#111111] rounded-full min-w-[134px]">
             View Shop
           </button>
-          <button className="px-6 py-3 bg-[#ffffff33] text-[#111111] font-medium text-base md:text-lg rounded-full border border-[#ffffff66] min-w-[184px]">
+          <button className="font-space px-6 py-3 bg-[#ffffff33] text-[#111111] font-medium text-base md:text-lg rounded-full border border-[#ffffff66] min-w-[184px]">
             Learn More
           </button>
         </div>

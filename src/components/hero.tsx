@@ -99,44 +99,44 @@ const HeroSection = () => {
     return (
         <div className="bg-white">
             {/* Desktop Version */}
-            <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-6 ">
+            <div className="items-center justify-between hidden px-6 mx-auto md:flex max-w-7xl ">
                 {/* Left Content */}
                 <div className="flex-1 max-w-lg">
-                    <div className="w-70 h-10 py-3 px-4 text-[16px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-4 rounded-full">
+                    <div className="font-space w-70 h-10 py-3 px-4 text-[16px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-4 rounded-full">
                         AI POWERED EVENT PLATFORM
                     </div>
 
-                    <h1 className="text-5xl font-bold leading-tight mb-6">
+                    <h1 className="mb-6 text-5xl font-bold leading-tight font-space">
                         Run <span className="gradient-text">Smarter</span> Events,<br />
                         <span className="gradient-text">Connect</span> Every Guest
                     </h1>
 
-                    <p className="text-gray-600 text-[20px] mb-8 leading-relaxed font-normal">
+                    <p className="font-space text-gray-600 text-[20px] mb-8 leading-relaxed font-normal">
                         Guests skip the awkward intros with smart digital cards, while you
                         stay in full control of your event and our AI-powered assistant
                         does the heavy lifting for everyone.
                     </p>
 
-                    <button className="bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8">
+                    <button className="font-inter bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8">
                         Create Your First Event
                     </button>
 
                     <div className="flex items-center space-x-3">
                         <div className="flex -space-x-2">
-                            <div className="w-8 h-8 bg-gray-300 rounded-full border-2 border-white">
+                            <div className="w-8 h-8 bg-gray-300 border-2 border-white rounded-full">
                                 <Image src={assets.ellipse17} alt='ys' />
                             </div>
-                            <div className="w-8 h-8 bg-gray-400 rounded-full border-2 border-white">
+                            <div className="w-8 h-8 bg-gray-400 border-2 border-white rounded-full">
                                 <Image src={assets.ellipse18} alt='ys' />
                             </div>
-                            <div className="w-8 h-8 bg-gray-500 rounded-full border-2 border-white">
+                            <div className="w-8 h-8 bg-gray-500 border-2 border-white rounded-full">
                                 <Image src={assets.ellipse19} alt='ys' />
                             </div>
-                            <div className="w-8 h-8 bg-gray-500 rounded-full border-2 border-white">
+                            <div className="w-8 h-8 bg-gray-500 border-2 border-white rounded-full">
                                 <Image src={assets.ellipse20} alt='ys' />
                             </div>
                         </div>
-                        <span className="text-gray-600 text-sm">
+                        <span className="text-sm text-gray-600 font-space ">
                             Join the <span className="gradient-text">thousands</span> of event pros who swear by us
                         </span>
                     </div>
@@ -187,19 +187,19 @@ const HeroSection = () => {
             </div>
 
             {/* Mobile Version */}
-            <div className="md:hidden px-4 py-8">
+            <div className="px-4 py-8 md:hidden">
                 {/* Header */}
-                <div className="text-center mb-8">
-                    <div className="text-xs text-gray-600 uppercase tracking-wide mb-3">
+                <div className="mb-8 text-center">
+                    <div className="mb-3 text-xs tracking-wide text-gray-600 uppercase">
                         AI POWERED EVENT PLATFORM
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+                    <h1 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl">
                         Run <span className="gradient-text">Smarter</span> Events,<br />
                         <span className="gradient-text">Connect</span> Every Guest
                     </h1>
 
-                    <p className="text-gray-600 text-base mb-6 leading-relaxed max-w-sm mx-auto">
+                    <p className="max-w-sm mx-auto mb-6 text-base leading-relaxed text-gray-600">
                         While you stay in full control of your event,
                         let our AI assistant handle the hard work and
                         awkward networking.
@@ -212,7 +212,7 @@ const HeroSection = () => {
 
                 {/* Mobile Carousel - Single Row with 4 Images */}
                 <div className="flex justify-center mb-8">
-                    <div className="grid grid-cols-4 gap-2 w-full max-w-sm">
+                    <div className="grid w-full max-w-sm grid-cols-4 gap-2">
                         <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
                             <Image src={assets.carousel_1} alt='img1' className="w-[85.71px] h-[120px] object-cover" />
                         </div>
@@ -244,12 +244,12 @@ const HeroSection = () => {
                 <div className="text-center">
                     <div className="flex items-center justify-center space-x-3">
                         <div className="flex -space-x-2">
-                            <div className="w-6 h-6 bg-gray-300 rounded-full border-2 border-white"></div>
-                            <div className="w-6 h-6 bg-gray-400 rounded-full border-2 border-white"></div>
-                            <div className="w-6 h-6 bg-gray-500 rounded-full border-2 border-white"></div>
+                            <div className="w-6 h-6 bg-gray-300 border-2 border-white rounded-full"></div>
+                            <div className="w-6 h-6 bg-gray-400 border-2 border-white rounded-full"></div>
+                            <div className="w-6 h-6 bg-gray-500 border-2 border-white rounded-full"></div>
                         </div>
-                        <span className="text-gray-600 text-xs">
-                            Join the <span className="text-pink-500 font-medium">thousands</span> of event pros who swear by us
+                        <span className="text-xs text-gray-600">
+                            Join the <span className="font-medium text-pink-500">thousands</span> of event pros who swear by us
                         </span>
                     </div>
                 </div>

@@ -1,13 +1,13 @@
 import image1 from './image1.png';
 import image3 from './image3.png';
-import carousel_1 from './carousel_1.png';
-import carousel_2 from './carousel_2.png';
-import carousel_3 from './carousel_3.png';
-import carousel_4 from './carousel_4.png';
-import carousel_5 from './carousel_5.png';
-import carousel_6 from './carousel_6.png';
-import carousel_7 from './carousel_7.png';
-import carousel_8 from './carousel_8.png';
+import carousel_1 from './carousel_1.jpg';
+import carousel_2 from './carousel_2.jpg';
+import carousel_3 from './carousel_3.jpg';
+import carousel_4 from './carousel_4.jpg';
+import carousel_5 from './carousel_5.jpg';
+import carousel_6 from './carousel_6.jpg';
+import carousel_7 from './carousel_7.jpg';
+import carousel_8 from './carousel_8.jpg';
 import ellipse17 from './Ellipse17.png'
 import ellipse18 from './Ellipse18.png'
 import ellipse19 from './Ellipse19.png'
@@ -28,6 +28,8 @@ import youtube from './youtube.png'
 import linkedin from './linkedin.png'
 import x from './x.png'
 import instagram from './instagram.png'
+import t1 from './t1.png'
+import t2 from './t2.png'
 
 
 
@@ -62,7 +64,9 @@ export const assets = {
     youtube,
     instagram,
     x,
-    linkedin
+    linkedin,
+    t1,
+    t2
 }
 
 

@@ -6,18 +6,18 @@ const feature = () => {
   return (
     <div>
         <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFFFFFE5] to-[#FAF8FF]">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto max-w-7xl">
         {/* Header Section */}
-        <div className=" mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+        <div className="mb-16 ">
+          <h1 className="mb-4 text-4xl font-bold text-gray-900 font-space sm:text-5xl lg:text-6xl">
             Why Event Organizers
           </h1>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
             <span className="gradient-text">
               Love Our Platform
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl">
+          <p className="max-w-2xl text-lg text-gray-600 font-space sm:text-xl">
             We&apos;ve reimagined event networking from the ground up. Here&apos;s what makes us different.
           </p>
         </div>
@@ -36,7 +36,7 @@ const feature = () => {
       `}
     >
       {/* Icon */}
-      <div className="w-16 h-16 mx-auto mb-6 rounded-xl flex items-center justify-center text-2xl">
+      <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 text-2xl rounded-xl">
       <Image
         src={feature.iconPlaceholder}
         alt={feature.title}
@@ -48,10 +48,10 @@ const feature = () => {
 
       {/* Content */}
       <div className="text-center">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">
+        <h3 className="text-xl font-bold text-gray-900 font-space fontmb-4">
           {feature.title}
         </h3>
-        <p className="text-gray-600 leading-relaxed">
+        <p className="leading-relaxed text-gray-600 font-space">
           {feature.description}
         </p>
       </div>

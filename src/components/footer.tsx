@@ -7,10 +7,10 @@ const Footer = () => {
   return (
     <footer className="bg-[#2E254D] text-white py-12 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
           {/* Brand Section */}
           <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start mb-4">
+            <div className="flex items-center justify-center mb-4 md:justify-start">
               <span className="font-manrope font-semibold md:font-semibold text-base leading-[150%] tracking-[0.32px] md:tracking-[0.32px] md:text-left text-center">
               <Image src={assets.image3} alt="logo"/>
               </span>
@@ -32,17 +32,17 @@ const Footer = () => {
               <p className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left mb-3">
                 Follow Us On:
               </p>
-              <div className="flex justify-center md:justify-start space-x-4">
-                <a href="#" className="w-8 h-8  rounded flex items-center justify-center hover:bg-gray-600 transition-colors">
+              <div className="flex justify-center space-x-4 md:justify-start">
+                <a href="#" className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
                 <Image src={assets.instagram} alt="logo"/>
                 </a>
-                <a href="#" className="w-8 h-8 rounded flex items-center justify-center hover:bg-gray-600 transition-colors">
+                <a href="#" className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
                 <Image src={assets.x} alt="logo"/>
                 </a>
-                <a href="#" className="w-8 h-8 rounded flex items-center justify-center hover:bg-gray-600 transition-colors">
+                <a href="#" className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
                 <Image src={assets.linkedin} alt="logo"/>
                 </a>
-                <a href="#" className="w-8 h-8 rounded flex items-center justify-center hover:bg-gray-600 transition-colors">
+                <a href="#" className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
                 <Image src={assets.youtube} alt="logo"/>
                 </a>
               </div>
