@@ -3,16 +3,16 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="w-full min-h-10 relative bg-gradient-to-b from-white to-gray-600 overflow-hidden">
+    <div className="relative w-full overflow-hidden min-h-10 bg-gradient-to-b from-white to-gray-600">
       {/* Mobile Layout (shown on lg breakpoint and below) */}
       <div 
-  className="lg:hidden flex flex-col h-screen relative px-4 py-8"
+  className="relative flex flex-col h-screen px-4 py-8 lg:hidden"
   style={{
     background: 'linear-gradient(to top, #D7CBE5, #FAF8FF)'
   }}
 >
   {/* Header Section */}
-  <div className="flex-1 flex flex-col items-center justify-center text-center relative">
+  <div className="relative flex flex-col items-center justify-center flex-1 text-center">
     {/* Main Title */}
     <div className="relative mb-8">
       <h1 className="text-[40px] sm:text-5xl md:text-6xl font-bold text-[#553286] leading-tight">
@@ -22,15 +22,15 @@ export default function Home() {
 
     {/* Subtitle */}
     <div className="mb-8">
-      <p className="text-gray-600 text-sm sm:text-base md:text-lg font-medium">
+      <p className="text-sm font-medium text-gray-600 sm:text-base md:text-lg">
         No phone. No awkward intro. Just a tap
       </p>
     </div>
 
     {/* Product Images */}
-    <div className="flex items-center justify-center space-x-4 sm:space-x-6 md:space-x-8 mb-8">
+    <div className="flex items-center justify-center mb-8 space-x-4 sm:space-x-6 md:space-x-8">
       {/* Wristband */}
-      <div className=" w-25 h-25 sm:w-20 sm:h-16 md:w-24 md:h-20 relative">
+      <div className="relative w-25 h-25 sm:w-20 sm:h-16 md:w-24 md:h-20">
         <Image 
           src={assets.wristband} 
           alt="Wristband device" 
@@ -41,7 +41,7 @@ export default function Home() {
       
       {/* Cards */}
       <div className="flex space-x-2">
-        <div className="w-25 h-25 sm:w-16 sm:h-10 md:w-20 md:h-12 relative rounded">
+        <div className="relative rounded w-25 h-25 sm:w-16 sm:h-10 md:w-20 md:h-12">
           <Image 
             src={assets.card} 
             alt="Gold card" 
@@ -52,7 +52,7 @@ export default function Home() {
       </div>
       
       {/* Ring */}
-      <div className="w-25 h-25 sm:w-20 sm:h-16 md:w-24 md:h-20 relative">
+      <div className="relative w-25 h-25 sm:w-20 sm:h-16 md:w-24 md:h-20">
         <Image 
           src={assets.ring} 
           alt="Smart ring" 
@@ -66,7 +66,7 @@ export default function Home() {
   {/* Bottom Section */}
 
     {/* Action Buttons */}
-    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
     <button className="
     absolute 
     right-8         /* Align to left edge */
@@ -85,12 +85,12 @@ export default function Home() {
 </div>
 
       {/* Desktop Layout (shown on lg breakpoint and above) */}
-      <div className="hidden lg:block h-screen">
+      <div className="hidden h-screen lg:block">
         {/* Main content centered */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4 w-full max-w-[90vw]">
           <h1 className="font-space text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] xl:text-[145.25px] font-bold text-[#553286] mb-4 relative mx-auto whitespace-nowrap">
             Link Devices
-            <div className="absolute top-0 right-0 w-[20vw] max-w-[200px] h-auto aspect-[482/126]">
+            <div className="absolute top-10 right-10 w-[20vw] max-w-[200px] h-auto aspect-[482/126]">
               <Image 
                 src={assets.wrist} 
                 alt="Wristband" 
@@ -104,10 +104,10 @@ export default function Home() {
 
         {/* Paragraph at bottom left */}
         <div className="absolute bottom-[60px] left-[5%] max-w-[50%]">
-          <p className="text-white mb-4 tracking-widest font-bold text-xl md:text-2xl">
+          <p className="mb-4 text-xl font-bold tracking-widest text-white md:text-2xl">
             Wearables that connects you instantly
           </p>
-          <p className="text-xl md:text-2xl tracking-widest font-light text-white">
+          <p className="text-xl font-light tracking-widest text-white md:text-2xl">
             No phone. No awkward intro. Just a tap
           </p>
         </div>
