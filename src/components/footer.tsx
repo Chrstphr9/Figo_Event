@@ -33,16 +33,16 @@ const Footer = () => {
                 Follow Us On:
               </p>
               <div className="flex justify-center space-x-4 md:justify-start">
-                <a href="#" className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
+                <a href="https://instagram.com/figoevents.app" target='_blank' className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
                 <Image src={assets.instagram} alt="logo"/>
                 </a>
-                <a href="#" className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
+                <a href="https://twitter.com/figoevents.app" target='_blank' className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
                 <Image src={assets.x} alt="logo"/>
                 </a>
-                <a href="#" className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
+                <a href="https://linkedin.com/figoevents.app" target='_blank' className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
                 <Image src={assets.linkedin} alt="logo"/>
                 </a>
-                <a href="#" className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
+                <a href="https://youtube.com/figoevents.app" target='_blank' className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
                 <Image src={assets.youtube} alt="logo"/>
                 </a>
               </div>

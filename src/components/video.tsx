@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
@@ -94,7 +95,7 @@ const VideoSection = () => {
                   <Image
                     src={assets.event2}
                     alt="HIS WIFETASTING"
-                    width={150}
+                    width={10}
                     height={150}
                     className="object-cover "
                   />

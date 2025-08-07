@@ -87,16 +87,16 @@ export default function Home() {
       {/* Desktop Layout (shown on lg breakpoint and above) */}
       <div className="hidden h-screen lg:block">
         {/* Main content centered */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4 w-full max-w-[90vw]">
+        <div className="absolute top-[200px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-2 w-full max-w-[90vw]">
           <h1 className="font-space text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] xl:text-[145.25px] font-bold text-[#553286] mb-4 relative mx-auto whitespace-nowrap">
             Link Devices
-            <div className="absolute top-10 right-10 w-[20vw] max-w-[200px] h-auto aspect-[482/126]">
+            <div className="absolute -top-[50px] left-[400px]  w-482 h-186">
               <Image 
                 src={assets.wrist} 
                 alt="Wristband" 
-                fill
+                width={482}
+                height={186}
                 className="object-contain"
-                sizes="(max-width: 768px) 100px, 200px"
               />
             </div>
           </h1>

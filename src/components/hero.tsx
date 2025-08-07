@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
+import { Fade } from 'react-awesome-reveal'
 
 const HeroSection = () => {
     const carousel1Ref = useRef<HTMLDivElement>(null);
@@ -26,18 +27,18 @@ const HeroSection = () => {
     useEffect(() => {
         const carousel1 = carousel1Ref.current;
         const carousel2 = carousel2Ref.current;
-        
+
         if (!carousel1 || !carousel2) return;
 
         let animationId1: number;
         let animationId2: number;
-        
+
         const scrollSpeed = 1; // pixels per frame (adjust for faster/slower scrolling)
 
         const autoScroll1 = () => {
             if (carousel1) {
                 carousel1.scrollTop += scrollSpeed;
-                
+
                 // Reset to beginning when reaching the end of first set
                 if (carousel1.scrollTop >= carousel1.scrollHeight / 3) {
                     carousel1.scrollTop = 0;
@@ -49,7 +50,7 @@ const HeroSection = () => {
         const autoScroll2 = () => {
             if (carousel2) {
                 carousel2.scrollTop -= scrollSpeed;
-                
+
                 // Reset to end when reaching the beginning (since scrolling up)
                 if (carousel2.scrollTop <= 0) {
                     carousel2.scrollTop = carousel2.scrollHeight / 3;
@@ -97,14 +98,16 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <div className="bg-white">
+        <div className="mt-16 bg-white sm:mt-0">
             {/* Desktop Version */}
             <div className="items-center justify-between hidden px-6 mx-auto md:flex max-w-7xl ">
                 {/* Left Content */}
                 <div className="flex-1 max-w-lg">
+                    {/* <Fade direction='down' delay={0.5}> */}
                     <div className="font-space w-70 h-10 py-3 px-4 text-[16px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-4 rounded-full">
                         AI POWERED EVENT PLATFORM
                     </div>
+                    {/* </Fade> */}
 
                     <h1 className="mb-6 text-5xl font-bold leading-tight font-space">
                         Run <span className="gradient-text">Smarter</span> Events,<br />
@@ -143,9 +146,9 @@ const HeroSection = () => {
                 </div>
 
                 {/* Right Carousel Container - Desktop with Auto-Scrolling */}
-                <div className="flex-shrink-0 ml-12 h-[800px] w-[450px] relative overflow-hidden">
+                <div className="flex-shrink-0 ml-12 h-[800px] w-[425px] relative overflow-hidden">
                     {/* First Column - Auto scrolling down */}
-                    <div 
+                    <div
                         ref={carousel1Ref}
                         className="absolute left-0 w-[200px] h-full overflow-hidden"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -154,10 +157,10 @@ const HeroSection = () => {
                             {/* Triple the images for seamless infinite scroll */}
                             {[...carousel1Images, ...carousel1Images, ...carousel1Images].map((img, index) => (
                                 <div key={index} className="w-[200px] h-[350px] bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
-                                    <Image 
-                                        src={img} 
-                                        alt={`Carousel 1 Image ${index % 4 + 1}`} 
-                                        className="w-[200px] h-[350px] object-cover" 
+                                    <Image
+                                        src={img}
+                                        alt={`Carousel 1 Image ${index % 4 + 1}`}
+                                        className="w-[200px] h-[350px] object-cover"
                                     />
                                 </div>
                             ))}
@@ -165,7 +168,7 @@ const HeroSection = () => {
                     </div>
 
                     {/* Second Column - Auto scrolling up */}
-                    <div 
+                    <div
                         ref={carousel2Ref}
                         className="absolute right-0 w-[200px] h-full overflow-hidden"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -174,10 +177,10 @@ const HeroSection = () => {
                             {/* Triple the images for seamless infinite scroll */}
                             {[...carousel2Images, ...carousel2Images, ...carousel2Images].map((img, index) => (
                                 <div key={index} className="w-[200px] h-[350px] bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
-                                    <Image 
-                                        src={img} 
-                                        alt={`Carousel 2 Image ${index % 4 + 1}`} 
-                                        className="w-[200px] h-[350px] object-cover" 
+                                    <Image
+                                        src={img}
+                                        alt={`Carousel 2 Image ${index % 4 + 1}`}
+                                        className="w-[200px] h-[350px] object-cover"
                                     />
                                 </div>
                             ))}
@@ -187,10 +190,10 @@ const HeroSection = () => {
             </div>
 
             {/* Mobile Version */}
-            <div className="px-4 py-8 md:hidden">
+            <div className="px-4 py-18 md:hidden">
                 {/* Header */}
                 <div className="mb-8 text-center">
-                    <div className="mb-3 text-xs tracking-wide text-gray-600 uppercase">
+                <div className="font-space w-fit h-10 py-3 px-4 text-[14px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-8 rounded-full mx-auto">
                         AI POWERED EVENT PLATFORM
                     </div>
 
@@ -205,9 +208,15 @@ const HeroSection = () => {
                         awkward networking.
                     </p>
 
-                    <button className="bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8">
-                        Create Your First Event
-                    </button>
+                    <a
+                        href="https://figoevents.com/app/signup"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <button className="mb-28 bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 cursor-pointer">
+                            Create Your First Event
+                        </button>
+                    </a>
                 </div>
 
                 {/* Mobile Carousel - Single Row with 4 Images */}
@@ -244,9 +253,18 @@ const HeroSection = () => {
                 <div className="text-center">
                     <div className="flex items-center justify-center space-x-3">
                         <div className="flex -space-x-2">
-                            <div className="w-6 h-6 bg-gray-300 border-2 border-white rounded-full"></div>
-                            <div className="w-6 h-6 bg-gray-400 border-2 border-white rounded-full"></div>
-                            <div className="w-6 h-6 bg-gray-500 border-2 border-white rounded-full"></div>
+                            <div className="w-6 h-6 bg-gray-300 border-2 border-white rounded-full">
+                            <Image src={assets.ellipse17} alt='ys' />
+                            </div>
+                            <div className="w-6 h-6 bg-gray-400 border-2 border-white rounded-full">
+                            <Image src={assets.ellipse18} alt='ys' />
+                            </div>
+                            <div className="w-6 h-6 bg-gray-500 border-2 border-white rounded-full">
+                            <Image src={assets.ellipse19} alt='ys' />
+                            </div>
+                            <div className="w-6 h-6 bg-gray-500 border-2 border-white rounded-full">
+                            <Image src={assets.ellipse20} alt='ys' />
+                            </div>
                         </div>
                         <span className="text-xs text-gray-600">
                             Join the <span className="font-medium text-pink-500">thousands</span> of event pros who swear by us

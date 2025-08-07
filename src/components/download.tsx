@@ -23,25 +23,27 @@ const EventCheckInApp = () => {
           <div className="flex flex-col justify-center gap-3 sm:flex-row md:justify-start sm:gap-5">
             {/* Google Play Button */}
             <a 
-              href="#" 
+              href="https://play.google.com/store/apps/details?id=com.figoevents.app"
+              target='_blank' 
               className="inline-flex items-center justify-center gap-3 px-4 py-3 text-sm font-semibold text-white transition-opacity sm:px-6 sm:text-base rounded-xl hover:opacity-90"
             >
               <Image 
                 src={assets.google} 
                 alt='Download on Google Play Store' 
-                className="w-auto h-8 sm:h-10"
+                className="w-auto h-8 sm:h-16"
               />
             </a>
             
             {/* App Store Button */}
             <a 
-              href="#" 
+              href="https://apps.apple.com/us/app/figoevents/id6499039966" 
+              target="_blank" 
               className="inline-flex items-center justify-center gap-3 px-4 py-3 text-sm font-semibold text-white transition-opacity sm:px-6 sm:text-base rounded-xl hover:opacity-90"
             >
               <Image 
                 src={assets.apple} 
                 alt='Download on Apple App Store' 
-                className="w-auto h-8 sm:h-10"
+                className="w-auto h-8 sm:h-16"
               />
             </a>
           </div>

@@ -68,7 +68,7 @@ const TestimonialCarousel = () => {
             }}
           >
             {/* Left Blur Overlay */}
-            <div className="absolute top-0 bottom-0 left-0 z-10 w-20 pointer-events-none md:w-32 bg-gradient-to-r from-gray-50 via-gray-50/90 to-transparent"></div>
+            <div className="absolute top-0 bottom-0 left-0 z-10 hidden w-20 pointer-events-none md:w-32 bg-gradient-to-r from-gray-50 via-gray-50/90 to-transparent md:block"></div>
             
             {/* Right Blur Overlay */}
             <div className="absolute top-0 bottom-0 right-0 z-10 w-20 pointer-events-none md:w-32 bg-gradient-to-l from-gray-50 via-gray-50/90 to-transparent"></div>
