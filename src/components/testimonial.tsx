@@ -81,7 +81,7 @@ const TestimonialCarousel = () => {
                 width: `${testimonials.length * 340}px`
               }}
             >
-              {testimonials.map((testimonial, index) => (
+              {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
                   className="flex-shrink-0 mr-5 "
