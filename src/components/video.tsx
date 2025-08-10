@@ -205,31 +205,37 @@ const VideoSection: React.FC = () => {
         
         {/* Video Section (unchanged) */}
         <div className="mb-8 sm:mb-12 md:mb-16">
-          <div className="p-[4px] rounded-2xl sm:rounded-3xl bg-[linear-gradient(135deg,#F047FF,#FE7D50,#D68F30,#FD5059,#FF4A68,#FA59CD,#9747FF4D,#626262)]">
-            <div className="relative bg-[#FAF8FF] rounded-[inherit] p-6 sm:p-8 md:p-12">
-              <div className="text-center">
-                <h3 className="mb-2 text-lg font-bold text-gray-900 font-space sm:text-xl md:text-2xl sm:mb-4">
-                  See How We&apos;re Redefining Events
-                </h3>
-                <p className="mb-6 text-xs text-gray-600 font-space sm:text-sm sm:mb-8">
-                  Watch our Quick Intro
-                </p>
-                
-                <div className="relative flex items-center justify-center w-24 h-24 mx-auto mb-4 border-black rounded-full border-3 sm:w-32 sm:h-32">
-                  <button className="absolute w-18 h-18 sm:w-26 sm:h-26 bg-[#553286] hover:bg-purple-700 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl group">
-                    <svg 
-                      className="w-12 h-12 ml-1 text-white transition-transform duration-200 sm:w-18 sm:h-18 group-hover:scale-110" 
-                      fill="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div className="p-[4px] rounded-2xl sm:rounded-3xl bg-[linear-gradient(135deg,#F047FF,#FE7D50,#D68F30,#FD5059,#FF4A68,#FA59CD,#9747FF4D,#626262)]">
+    <div className="relative bg-[#FAF8FF] rounded-[inherit] p-6 sm:p-8 md:p-12">
+      <div className="text-center">
+        <h3 className="mb-2 text-lg font-bold text-gray-900 font-space sm:text-xl md:text-2xl sm:mb-4">
+          See How We&apos;re Redefining Events
+        </h3>
+        <p className="mb-6 text-xs text-gray-600 font-space sm:text-sm sm:mb-8">
+          Watch our Quick Intro
+        </p>
+        
+        <div className="relative flex items-center justify-center w-24 h-24 mx-auto mb-4 border-black rounded-full border-3 sm:w-32 sm:h-32">
+          <a 
+            href="https://www.youtube.com/watch?v=w4P8lOH6I-Q" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute w-18 h-18 sm:w-26 sm:h-26 bg-[#553286] hover:bg-purple-700 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl group"
+            aria-label="Play video"
+          >
+            <svg 
+              className="w-12 h-12 ml-1 text-white transition-transform duration-200 sm:w-18 sm:h-18 group-hover:scale-110" 
+              fill="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </a>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* Upcoming Events Section with Search */}
         <div>

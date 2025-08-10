@@ -23,7 +23,7 @@ import event1 from './Event1.png'
 import event2 from './Event2.png'
 import google from './google.png'
 import apple from './apple.png'
-import qr from './qrcode.jpg'
+import qr from './qrcode.png'
 import youtube from './youtube.png'
 import linkedin from './linkedin.png'
 import x from './x.png'
@@ -91,7 +91,7 @@ export const assets = {
       {
         title: "Real-time Analytics",
         description: "Track engagement, networking success, and event performance with comprehensive real-time analytics.",
-        iconPlaceholder: "/lightning-charge.png"
+        iconPlaceholder: "/lighbtning-charge.png"
       },
       {
         title: "Contactless Check-In",
