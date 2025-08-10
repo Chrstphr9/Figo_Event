@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className={`hidden lg:flex items-center justify-between px-6 h-[50px] w-full max-w-[1440px] mx-auto transition-all duration-300 fixed top-0 left-0 right-0 z-50 ${scrolled
+      <nav className={`hidden lg:flex items-center justify-between px-6 h-[50px] w-full mx-auto transition-all duration-300 fixed top-0 left-0 right-0 z-50 ${scrolled
           ? 'bg-white/80 backdrop-blur-lg border-b border-gray-200/30 shadow-sm'
           : 'bg-white/20 backdrop-blur-md border-b border-transparent'
         }`}>
@@ -34,7 +34,7 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div className="absolute left-0 right-0 flex items-center justify-center mx-auto w-fit">
           <div className='flex items-center space-x-8'>
-            <a href="#about" className={`transition-colors text-[16px] font-medium font-inter ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
+            <a href='#about' className={`transition-colors text-[16px] font-medium font-inter ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
               }`}>
               About Us
             </a>
@@ -42,7 +42,7 @@ const Navbar = () => {
               }`}>
               Pricing
             </a>
-            <a href="#" className={`transition-colors text-[16px] font-light font-inter ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
+            <a href="#faq" className={`transition-colors text-[16px] font-light font-inter ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
               }`}>
               FAQs
             </a>
@@ -51,14 +51,14 @@ const Navbar = () => {
 
         {/* Action Buttons */}
         <div className="flex items-center space-x-4">
-          <a href="https://figoevents.com/app/index" target="_blank" rel="noopener noreferrer">
+          <a href="https://app.figoevents.com/app/index" target="_blank" rel="noopener noreferrer">
             <button className={`text-[16px] font-medium font-inter cursor-pointer ${scrolled ? 'text-gray-800' : 'text-black'
               }`}>
               Sign in
             </button>
           </a>
           <a
-            href="https://figoevents.com/app/signup"
+            href="https://app.figoevents.com/app/signup"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -143,7 +143,7 @@ const Navbar = () => {
         {/* Auth Buttons */}
         <div className="pt-4 space-y-3 border-t border-gray-200/30">
           <a 
-          href="https://figoevents.com/app/index"
+          href="https://app.figoevents.com/app/index"
           target='_blank'>
           <button 
             className="w-full px-3 py-2 font-medium text-left text-gray-800 transition-all rounded-md hover:text-purple-600 hover:bg-purple-50/50"
@@ -153,7 +153,7 @@ const Navbar = () => {
           </button>
           </a>
         <a 
-        href="https://figoevents.com/app/signup"
+        href="https://app.figoevents.com/app/signup"
         target='_blank'>
         <button 
             className="w-full px-4 py-2.5 bg-[#553286] hover:bg-purple-700 text-white rounded-md transition-colors font-medium shadow-sm"

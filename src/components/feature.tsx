@@ -6,7 +6,7 @@ import Image from 'next/image'
 const feature = () => {
   return (
     <div>
-        <div className="min-h-screen py-18 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFFFFFE5] to-[#FAF8FF]">
+        <div id='about' className="min-h-screen py-18 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFFFFFE5] to-[#FAF8FF]">
       <div className="mx-auto max-w-7xl">
         {/* Header Section */}
         <div className="mb-16 ">
@@ -28,7 +28,7 @@ const feature = () => {
   {features.map((feature, index) => (
     <div
       key={index}
-      className="group relative p-[2px] rounded-2xl transition-all duration-300 md:hover:-translate-y-1 bg-white md:hover:bg-gradient-to-r md:hover:from-purple-500 md:hover:to-pink-500"
+      className="group relative p-[1px] rounded-2xl transition-all duration-300 md:hover:-translate-y-1 bg-white md:hover:bg-gradient-to-r md:hover:from-purple-500 md:hover:to-pink-500 md:hover:p-[1px]"
     >
       {/* Inner container with white background */}
       <div className="relative h-full p-8 transition-all duration-300 bg-white shadow-sm rounded-2xl md:hover:shadow-lg">

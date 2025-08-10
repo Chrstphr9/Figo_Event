@@ -19,7 +19,7 @@ const pricing = () => {
 
 
   return (
-    <section className="w-full px-4 py-12 bg-gray-50 sm:py-16 md:py-20">
+    <section id='pricing' className="w-full px-4 py-12 bg-gray-50 sm:py-16 md:py-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12 text-center sm:mb-16 ">
@@ -51,6 +51,7 @@ const pricing = () => {
               Best for Solo Organizers and Intimate Events
             </p>
 
+            <a href="https://app.figoevents.com/app/signup" target="_blank" rel="noopener noreferrer">
             <button className="flex items-center justify-center w-full px-6 py-3 mb-8 text-sm font-medium text-white transition-colors duration-200 bg-gray-900 rounded-full font-space hover:bg-gray-800 sm:text-base group">
               Get Started
               <svg 
@@ -62,6 +63,7 @@ const pricing = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
+            </a>
 
             {/* Features List */}
             <div className="space-y-3">
@@ -94,17 +96,19 @@ const pricing = () => {
               Best for Professional Event Planners
             </p>
 
-            <button className="flex items-center justify-center w-full px-6 py-3 mb-8 text-sm font-medium text-white transition-colors duration-200 bg-gray-900 rounded-full font-space hover:bg-gray-800 sm:text-base group">
-              Contact Sales
-              <svg 
-                className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            <a href="mailto:hello@figoevents.com" className="block w-full">
+  <button className="flex items-center justify-center w-full px-6 py-3 mb-8 text-sm font-medium text-white transition-colors duration-200 bg-gray-900 rounded-full font-space hover:bg-gray-800 sm:text-base group">
+    Contact Sales
+    <svg 
+      className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</a>
 
             {/* Features List */}
             <div className="space-y-3">

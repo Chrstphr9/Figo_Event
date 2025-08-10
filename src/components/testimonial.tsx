@@ -18,9 +18,9 @@ const TestimonialCarousel = () => {
     {
       id: 2,
       quote: "It's amazing how easy it was to administer my birthday event using FigoEvents. From registration to check-ins. Really cool stuff.",
-      name: "John Doe",
+      name: " Wiilams",
       title: "Event Manager",
-      avatar: "/t1.png"
+      avatar: "/t3.jpeg"
     },
     {
       id: 3,

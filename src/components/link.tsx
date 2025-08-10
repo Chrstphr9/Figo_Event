@@ -114,12 +114,14 @@ export default function Home() {
 
         {/* Buttons at bottom right */}
         <div className="absolute bottom-[110px] right-[5%] flex space-x-4">
-          <button className="font-space px-6 py-3 bg-[#5E688980] font-medium text-base md:text-lg text-[#111111] rounded-full min-w-[134px]">
+          <a href="https://billsclan.shop/figocard" target="_blank" rel="noopener noreferrer">
+          <button className="font-space px-6 py-3 bg-[#5E688980] font-medium text-base md:text-lg text-[#111111] rounded-full min-w-[134px] cursor-pointer">
             View Shop
           </button>
-          <button className="font-space px-6 py-3 bg-[#ffffff33] text-[#111111] font-medium text-base md:text-lg rounded-full border border-[#ffffff66] min-w-[184px]">
+          </a>
+          {/* <button className="font-space px-6 py-3 bg-[#ffffff33] text-[#111111] font-medium text-base md:text-lg rounded-full border border-[#ffffff66] min-w-[184px]">
             Learn More
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

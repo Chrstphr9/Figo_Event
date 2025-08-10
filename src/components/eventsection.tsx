@@ -98,7 +98,8 @@ const eventsection = () => {
         Join thousands of event organizers who are already using our platform to create more engaging, connected experiences for their attendees.
       </p>
       
-      <button className="font-inter bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-6 py-3 rounded-full font-medium text-sm sm:text-base transition-colors duration-200 inline-flex items-center group">
+     <a href="https://app.figoevents.com/app/signup" target="_blank" rel="noopener noreferrer">
+     <button className="font-inter bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-6 py-3 rounded-full font-medium text-sm sm:text-base transition-colors duration-200 inline-flex items-center group">
         Get Started
         <svg 
           className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" 
@@ -109,6 +110,7 @@ const eventsection = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
+     </a>
     </div>
   </div>
 

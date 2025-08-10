@@ -1,5 +1,6 @@
 // app/layout.tsx
 import './globals.css';
+import FigoAIChatWidget from '@/src/components/FigoAIChatWidget'
 
 export const metadata = {
   title: 'Figo Events',
@@ -13,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       
 
           {children}
-
+          <FigoAIChatWidget/>
         
       </body>
     </html>

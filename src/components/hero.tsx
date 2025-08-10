@@ -1,4 +1,5 @@
 'use client'
+// @ts-nocheck
 import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
@@ -98,14 +99,17 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <div className="mt-16 bg-white sm:mt-0">
+        <div className="mt-16 bg-white sm:mt-16">
             {/* Desktop Version */}
             <div className="items-center justify-between hidden px-6 mx-auto md:flex max-w-7xl ">
                 {/* Left Content */}
-                <div className="flex-1 max-w-lg">
-                    {/* <Fade direction='down' delay={0.5}> */}
-                    <div className="font-space w-70 h-10 py-3 px-4 text-[16px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-4 rounded-full">
-                        AI POWERED EVENT PLATFORM
+                <div
+                className="flex-1 max-w-lg">
+                    {/* <Fade 
+                    direction='down' 
+                    delay={0.5}> */}
+                    <div className="font-space w-77 h-10 py-3 px-4 text-[16px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-4 rounded-full">
+                    NEXT-GENERATION EVENT PLATFORM
                     </div>
                     {/* </Fade> */}
 
@@ -115,14 +119,14 @@ const HeroSection = () => {
                     </h1>
 
                     <p className="font-space text-gray-600 text-[20px] mb-8 leading-relaxed font-normal">
-                        Guests skip the awkward intros with smart digital cards, while you
-                        stay in full control of your event and our AI-powered assistant
-                        does the heavy lifting for everyone.
+                    Guests skip the awkward intros with smart digital cards while you enjoy seamless access control, effortless registration, and real-time analytics. Stay in full control as our AI assistant handles everything from event planning to customer support agent that answers event FAQs.
                     </p>
 
+                    <a href="https://app.figoevents.com/app/signup" target="_blank" rel="noopener noreferrer">
                     <button className="font-inter bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8">
                         Create Your First Event
                     </button>
+                    </a>
 
                     <div className="flex items-center space-x-3">
                         <div className="flex -space-x-2">
@@ -146,7 +150,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Right Carousel Container - Desktop with Auto-Scrolling */}
-                <div className="flex-shrink-0 ml-12 h-[800px] w-[425px] relative overflow-hidden">
+                <div className="flex-shrink-0 ml-12 h-[800px] w-[415px] relative overflow-hidden">
                     {/* First Column - Auto scrolling down */}
                     <div
                         ref={carousel1Ref}

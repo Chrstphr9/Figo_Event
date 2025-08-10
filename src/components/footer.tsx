@@ -60,17 +60,17 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
+                <a href="#about" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
                   About
                 </a>
               </li>
               <li>
-                <a href="#" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
+                <a href="#about" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
                   Features
                 </a>
               </li>
               <li>
-                <a href="#" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
+                <a href="#pricing" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
                   Pricing
                 </a>
               </li>

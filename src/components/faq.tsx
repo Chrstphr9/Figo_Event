@@ -42,7 +42,7 @@ const FAQ = () => {
     };
 
     return (
-        <section className="w-full bg-gradient-to-b from-[#FFFFFFE5] to-[#FAF8FF] py-12 px-4 sm:py-16 md:py-20">
+        <section id='faq' className="w-full bg-gradient-to-b from-[#FFFFFFE5] to-[#FAF8FF] py-12 px-4 sm:py-16 md:py-20">
   <div className="max-w-4xl mx-auto">
     {/* Header */}
     <div className="mb-8 text-center sm:mb-12">

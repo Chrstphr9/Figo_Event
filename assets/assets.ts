@@ -30,6 +30,7 @@ import x from './x.png'
 import instagram from './instagram.png'
 import t1 from './t1.png'
 import t2 from './t2.png'
+import star from './star.png'
 
 
 
@@ -66,7 +67,8 @@ export const assets = {
     x,
     linkedin,
     t1,
-    t2
+    t2,
+    star
 }
 
 
