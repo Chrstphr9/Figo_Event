@@ -3,7 +3,6 @@
 import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
-import { Fade } from 'react-awesome-reveal'
 
 const HeroSection = () => {
     const carousel1Ref = useRef<HTMLDivElement>(null);
@@ -119,7 +118,10 @@ const HeroSection = () => {
                     </h1>
 
                     <p className="font-space text-gray-600 text-[20px] mb-8 leading-relaxed font-normal">
-                    Guests skip the awkward intros with smart digital cards while you enjoy seamless access control, effortless registration, and real-time analytics. Stay in full control as our AI assistant handles everything from event planning to customer support agent that answers event FAQs.
+                    Guests skip the awkward intros with smart digital cards while you enjoy seamless 
+                    access control, effortless registration, and real-time analytics. Stay in full control 
+                    as our AI assistant handles everything from event planning to customer support 
+                    agent that answers event FAQs.
                     </p>
 
                     <a href="https://app.figoevents.com/app/signup" target="_blank" rel="noopener noreferrer">
@@ -198,7 +200,7 @@ const HeroSection = () => {
                 {/* Header */}
                 <div className="mb-8 text-center">
                 <div className="font-space w-fit h-10 py-3 px-4 text-[14px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-8 rounded-full mx-auto">
-                        AI POWERED EVENT PLATFORM
+                    NEXT-GENERATION EVENT PLATFORM
                     </div>
 
                     <h1 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl">
@@ -207,9 +209,10 @@ const HeroSection = () => {
                     </h1>
 
                     <p className="max-w-sm mx-auto mb-6 text-base leading-relaxed text-gray-600">
-                        While you stay in full control of your event,
-                        let our AI assistant handle the hard work and
-                        awkward networking.
+                    Guests skip the awkward intros with smart digital cards while you enjoy seamless 
+                    access control, effortless registration, and real-time analytics. Stay in full control as
+                     our AI assistant handles everything from event planning to customer support 
+                     agent that answers event FAQs.
                     </p>
 
                     <a

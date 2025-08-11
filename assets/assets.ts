@@ -91,7 +91,7 @@ export const assets = {
       {
         title: "Real-time Analytics",
         description: "Track engagement, networking success, and event performance with comprehensive real-time analytics.",
-        iconPlaceholder: "/lighbtning-charge.png"
+        iconPlaceholder: "/lightning-charge.png"
       },
       {
         title: "Contactless Check-In",
