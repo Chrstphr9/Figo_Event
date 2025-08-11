@@ -34,7 +34,7 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div className="absolute left-0 right-0 flex items-center justify-center mx-auto w-fit">
           <div className='flex items-center space-x-8'>
-            <a href='#about' className={`transition-colors text-[16px] font-medium font-inter ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
+            <a href='#link' className={`transition-colors text-[16px] font-medium font-inter ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
               }`}>
               About Us
             </a>
@@ -125,7 +125,7 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div className="mb-4 space-y-1">
           {[
-            { label: 'About Us', href: '#about' },
+            { label: 'About Us', href: '#link' },
             { label: 'Pricing', href: '#pricing' },
             { label: 'FAQs', href: '#faqs' }
           ].map((link) => (

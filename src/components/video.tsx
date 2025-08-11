@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Type definitions
 interface EventData {
@@ -72,6 +73,8 @@ const VideoSection: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('');
   const [eventType, setEventType] = useState<string>('');
   const [isSearching, setIsSearching] = useState<boolean>(false);
+  const [filteredEvents, setFilteredEvents] = useState(events);
+
 
   // Fetch initial events
   const fetchEvents = async (): Promise<void> => {
@@ -79,7 +82,7 @@ const VideoSection: React.FC = () => {
       setLoading(true);
       const response = await fetch('https://figoevents.com/api/v1/organizedevents/open');
       const data: ApiResponse = await response.json();
-      
+
       if (data.responseCode === "00" && data.responseData) {
         setEvents(data.responseData.slice(0, 4)); // Show only first 4 events
       }
@@ -111,9 +114,9 @@ const VideoSection: React.FC = () => {
         },
         body: JSON.stringify(payload)
       });
-      
+
       const data: ApiResponse = await response.json();
-      
+
       if (data.responseCode === "00" && data.responseData) {
         setEvents(data.responseData.slice(0, 4)); // Show only first 4 events
       }
@@ -123,6 +126,8 @@ const VideoSection: React.FC = () => {
       setIsSearching(false);
     }
   };
+
+
 
   // Handle search input change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -140,29 +145,29 @@ const VideoSection: React.FC = () => {
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     const eventDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-    
+
     const timeDiff = eventDate.getTime() - today.getTime();
     const dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    
-    const timeString = date.toLocaleTimeString('en-US', { 
-      hour: 'numeric', 
+
+    const timeString = date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
       minute: '2-digit',
-      hour12: true 
+      hour12: true
     });
-    
+
     if (dayDiff === 0) {
       return `Today, ${timeString}`;
     } else if (dayDiff === 1) {
       return `Tomorrow, ${timeString}`;
     } else if (dayDiff > 1) {
-      return `${date.toLocaleDateString('en-US', { 
-        month: 'short', 
-        day: 'numeric' 
+      return `${date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric'
       })}, ${timeString}`;
     } else {
-      return `${date.toLocaleDateString('en-US', { 
-        month: 'short', 
-        day: 'numeric' 
+      return `${date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric'
       })}, ${timeString}`;
     }
   };
@@ -180,7 +185,7 @@ const VideoSection: React.FC = () => {
     if (locationType === 'online') {
       return 'Online Event';
     }
-    
+
     // Extract first part of location if it's too long
     const parts = location?.split(',') || [];
     return parts[0] || 'Location TBD';
@@ -202,40 +207,40 @@ const VideoSection: React.FC = () => {
   return (
     <section className="w-full bg-[#FAF8FF] py-8 px-4 sm:py-12 md:py-16">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Video Section (unchanged) */}
         <div className="mb-8 sm:mb-12 md:mb-16">
-  <div className="p-[4px] rounded-2xl sm:rounded-3xl bg-[linear-gradient(135deg,#F047FF,#FE7D50,#D68F30,#FD5059,#FF4A68,#FA59CD,#9747FF4D,#626262)]">
-    <div className="relative bg-[#FAF8FF] rounded-[inherit] p-6 sm:p-8 md:p-12">
-      <div className="text-center">
-        <h3 className="mb-2 text-lg font-bold text-gray-900 font-space sm:text-xl md:text-2xl sm:mb-4">
-          See How We&apos;re Redefining Events
-        </h3>
-        <p className="mb-6 text-xs text-gray-600 font-space sm:text-sm sm:mb-8">
-          Watch our Quick Intro
-        </p>
-        
-        <div className="relative flex items-center justify-center w-24 h-24 mx-auto mb-4 border-black rounded-full border-3 sm:w-32 sm:h-32">
-          <a 
-            href="https://www.youtube.com/watch?v=w4P8lOH6I-Q" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute w-18 h-18 sm:w-26 sm:h-26 bg-[#553286] hover:bg-purple-700 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl group"
-            aria-label="Play video"
-          >
-            <svg 
-              className="w-12 h-12 ml-1 text-white transition-transform duration-200 sm:w-18 sm:h-18 group-hover:scale-110" 
-              fill="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </a>
+          <div className="p-[4px] rounded-2xl sm:rounded-3xl bg-[linear-gradient(135deg,#F047FF,#FE7D50,#D68F30,#FD5059,#FF4A68,#FA59CD,#9747FF4D,#626262)]">
+            <div className="relative bg-[#FAF8FF] rounded-[inherit] p-6 sm:p-8 md:p-12">
+              <div className="text-center">
+                <h3 className="mb-2 text-lg font-bold text-gray-900 font-space sm:text-xl md:text-2xl sm:mb-4">
+                  See How We&apos;re Redefining Events
+                </h3>
+                <p className="mb-6 text-xs text-gray-600 font-space sm:text-sm sm:mb-8">
+                  Watch our Quick Intro
+                </p>
+
+                <div className="relative flex items-center justify-center w-24 h-24 mx-auto mb-4 border-black rounded-full border-3 sm:w-32 sm:h-32">
+                  <a
+                    href="https://www.youtube.com/watch?v=w4P8lOH6I-Q"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute w-18 h-18 sm:w-26 sm:h-26 bg-[#553286] hover:bg-purple-700 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl group"
+                    aria-label="Play video"
+                  >
+                    <svg
+                      className="w-12 h-12 ml-1 text-white transition-transform duration-200 sm:w-18 sm:h-18 group-hover:scale-110"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
         {/* Upcoming Events Section with Search */}
         <div>
@@ -244,50 +249,58 @@ const VideoSection: React.FC = () => {
               <h4 className="text-lg font-bold text-gray-900 font-space sm:text-xl md:text-2xl">
                 Upcoming Events
               </h4>
-              <p className="mt-1 text-xs text-gray-600 font-space sm:text-sm">
+              <p className="mt-1 text-xs text-gray-600 font-space sm:text-[20px]">
                 Near You
               </p>
             </div>
-            <button className="flex items-center text-sm font-medium text-black cursor-pointer font-inter sm:text-base group">
-              View All
-              <svg 
-                className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            <Link href="/events">
+              <button className="flex items-center text-sm font-medium text-black cursor-pointer font-inter sm:text-base group">
+                View All
+                <svg
+                  className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
           </div>
 
           {/* Search Controls */}
           <div className="flex flex-col gap-4 mb-6 sm:flex-row">
-            <div className="flex-1">
+            {/* Search Input */}
+            {/* <div className="flex flex-1 gap-2">
               <input
                 type="text"
                 placeholder="Search events..."
                 value={searchText}
                 onChange={handleSearchChange}
                 className="w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              // onKeyPress={(e) => e.key === 'Enter' && handleEventTypeChange()} // Optional: allow Enter key to trigger search
               />
-            </div>
-            <div className="sm:w-48">
+              <button
+                onClick={searchEvents}
+                className="px-4 py-2 text-white transition-colors bg-purple-600 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              >
+                Search
+              </button>
+            </div> */}
+
+            {/* Event Type Selector */}
+            {/* <div className="sm:w-48">
               <select
+                name='etype'
                 value={eventType}
                 onChange={handleEventTypeChange}
                 className="w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               >
                 <option value="">All Event Types</option>
-                <option value="conference">Conference</option>
-                <option value="workshop">Workshop</option>
-                <option value="seminar">Seminar</option>
-                <option value="networking">Networking</option>
-                <option value="entertainment">Entertainment</option>
-                <option value="social">Social</option>
-                <option value="corporate">Corporate</option>
+                <option value="physical">Physical Events</option>
+                <option value="virtual">Online Events (Webinar/Live)</option>
               </select>
-            </div>
+            </div> */}
           </div>
 
           {/* Events Grid - API Driven */}
@@ -318,10 +331,10 @@ const VideoSection: React.FC = () => {
                         />
                       ) : (
                         <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-purple-100 to-pink-100">
-                          <svg 
+                          <svg
                             className="w-8 h-8 text-purple-400"
-                            fill="none" 
-                            stroke="currentColor" 
+                            fill="none"
+                            stroke="currentColor"
                             viewBox="0 0 24 24"
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

@@ -107,8 +107,8 @@ const HeroSection = () => {
                     {/* <Fade 
                     direction='down' 
                     delay={0.5}> */}
-                    <div className="font-space w-77 h-10 py-3 px-4 text-[16px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-4 rounded-full">
-                    NEXT-GENERATION EVENT PLATFORM
+                    <div className="font-space w-65 h-10 py-3 px-4 text-[16px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-4 rounded-full">
+                    NEXT-GEN EVENT PLATFORM
                     </div>
                     {/* </Fade> */}
 
@@ -200,7 +200,7 @@ const HeroSection = () => {
                 {/* Header */}
                 <div className="mb-8 text-center">
                 <div className="font-space w-fit h-10 py-3 px-4 text-[14px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-8 rounded-full mx-auto">
-                    NEXT-GENERATION EVENT PLATFORM
+                    NEXT-GEN EVENT PLATFORM
                     </div>
 
                     <h1 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl">

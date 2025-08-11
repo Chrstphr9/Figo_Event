@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import {assets} from '@/assets/assets'
+import { assets } from '@/assets/assets'
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -11,10 +12,10 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center mb-4 md:justify-start">
               <span className="font-manrope font-semibold md:font-semibold text-base leading-[150%] tracking-[0.32px] md:tracking-[0.32px] md:text-left text-center">
-              <Image src={assets.image3} alt="logo"/>
+                <Image src={assets.image3} alt="logo" />
               </span>
             </div>
-            
+
             <div className="mb-6">
               <p className="text-[16px] font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left mb-2">
                 YOUR ULTIMATE EVENT SOLUTION.
@@ -33,16 +34,16 @@ const Footer = () => {
               </p>
               <div className="flex justify-center space-x-4 md:justify-start">
                 <a href="https://instagram.com/figoevents.app" target='_blank' className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
-                <Image src={assets.instagram} alt="logo"/>
+                  <Image src={assets.instagram} alt="logo" />
                 </a>
                 <a href="https://twitter.com/figoevents.app" target='_blank' className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
-                <Image src={assets.x} alt="logo"/>
+                  <Image src={assets.x} alt="logo" />
                 </a>
                 <a href="https://linkedin.com/figoevents.app" target='_blank' className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
-                <Image src={assets.linkedin} alt="logo"/>
+                  <Image src={assets.linkedin} alt="logo" />
                 </a>
                 <a href="https://youtube.com/figoevents.app" target='_blank' className="flex items-center justify-center w-8 h-8 transition-colors rounded hover:bg-gray-600">
-                <Image src={assets.youtube} alt="logo"/>
+                  <Image src={assets.youtube} alt="logo" />
                 </a>
               </div>
             </div>
@@ -60,7 +61,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#about" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
+                <a href="#link" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
                   About
                 </a>
               </li>
@@ -89,19 +90,22 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
+                <a
+                  href="mailto:hello@figoevents.com"
+                  className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block"
+                >
                   hello@figoevents.com
                 </a>
               </li>
               <li>
-                <a href="#" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
+                <Link href="/terms" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block">
                   Terms and Conditions
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block underline">
+                <Link href="/privacy" className="font-manrope font-bold md:font-semibold text-base leading-[150%] tracking-[0.32px] text-center md:text-left hover:text-gray-300 transition-colors block underline">
                   Privacy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

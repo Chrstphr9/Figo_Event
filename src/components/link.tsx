@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="relative w-full overflow-hidden min-h-10 bg-gradient-to-b from-white to-gray-600">
+    <div id='link' className="relative w-full overflow-hidden min-h-10 bg-gradient-to-b from-white to-gray-600">
       {/* Mobile Layout (shown on lg breakpoint and below) */}
       <div 
   className="relative flex flex-col h-screen px-4 py-8 lg:hidden"
