@@ -216,7 +216,7 @@ const HeroSection = () => {
                     </p>
 
                     <a
-                        href="https://figoevents.com/app/signup"
+                        href="https://app.figoevents.com/app/signup"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -230,13 +230,13 @@ const HeroSection = () => {
                 <div className="flex justify-center mb-8">
                     <div className="grid w-full max-w-sm grid-cols-4 gap-2">
                         <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
-                            <Image src={assets.carousel_1} alt='img1' className="w-[85.71px] h-[120px] object-cover" />
+                            <Image src={assets.carousel_3} alt='img1' className="w-[85.71px] h-[120px] object-cover" />
                         </div>
                         <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
                             <Image src={assets.carousel_2} alt='img2' className="w-[85.71px] h-[120px] object-cover" />
                         </div>
                         <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
-                            <Image src={assets.carousel_3} alt='img3' className="w-[85.71px] h-[120px] object-cover" />
+                            <Image src={assets.carousel_1} alt='img3' className="w-[85.71px] h-[120px] object-cover" />
                         </div>
                         <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
                             <Image src={assets.carousel_4} alt='img4' className="w-[85.71px] h-[120px] object-cover" />
