@@ -300,7 +300,7 @@ const UpcomingEvents: React.FC = () => {
     </div>
 
     {/* Simplified Search Info */}
-    <div className="pt-4 mt-4 border-t border-white/20">
+    {/* <div className="pt-4 mt-4 border-t border-white/20">
       <div className="flex items-center justify-center">
         <div className="flex items-center gap-2 text-xs text-gray-600">
           <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -309,7 +309,7 @@ const UpcomingEvents: React.FC = () => {
           <span className="font-medium">Search by event title or use filters to find the perfect event</span>
         </div>
       </div>
-    </div>
+    </div> */}
   </div>
 </div>
 
