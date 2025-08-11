@@ -76,7 +76,7 @@ export const assets = {
       {
         title: "Event Management",
         description: "Create, manage, and track your events with our powerful tools designed for modern event organizers.",
-        iconPlaceholder: "/ID.png"
+        iconPlaceholder: "/calendar.png"
       },
       {
         title: "Instant Virtual ID",
