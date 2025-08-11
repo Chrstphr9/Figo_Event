@@ -98,7 +98,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <div className="mt-16 bg-white sm:mt-16">
+        <div className="mt-16 bg-white sm:mt-10">
             {/* Desktop Version */}
             <div className="items-center justify-between hidden px-6 mx-auto md:flex max-w-7xl ">
                 {/* Left Content */}
