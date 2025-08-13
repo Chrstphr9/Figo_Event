@@ -315,14 +315,7 @@ const UpcomingEvents: React.FC = () => {
       ) : (
         <div>
   <div className="flex items-center justify-between mb-4 sm:mb-6">
-    <div>
-      <h4 className="text-lg font-bold text-gray-900 font-space sm:text-xl md:text-2xl">
-        Upcoming Events
-      </h4>
-      <p className="mt-1 text-xs text-gray-600 font-space sm:text-[20px]">
-        Near You
-      </p>
-    </div>
+ 
 
   </div>
 
