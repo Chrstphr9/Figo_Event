@@ -195,14 +195,7 @@ const VideoSection: React.FC = () => {
     fetchEvents();
   }, []);
 
-  // Trigger search when inputs change (debounced)
-  // useEffect(() => {
-  //   const timeoutId = setTimeout(() => {
-  //     searchEvents();
-  //   }, 500);
 
-  //   return () => clearTimeout(timeoutId);
-  // }, [searchText, eventType]);
 
   return (
     <section className="w-full bg-[#FAF8FF] py-8 px-4 sm:py-12 md:py-16">
@@ -244,124 +237,140 @@ const VideoSection: React.FC = () => {
 
         {/* Upcoming Events Section with Search */}
         <div>
-          <div className="flex items-center justify-between mb-4 sm:mb-6">
-            <div>
-              <h4 className="text-lg font-bold text-gray-900 font-space sm:text-xl md:text-2xl">
-                Upcoming Events
-              </h4>
-              <p className="mt-1 text-xs text-gray-600 font-space sm:text-[20px]">
-                Near You
-              </p>
-            </div>
-            <Link href="/events">
-              <button className="flex items-center text-sm font-medium text-black cursor-pointer font-inter sm:text-base group">
-                View All
-                <svg
-                  className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </Link>
-          </div>
+  <div className="flex items-center justify-between mb-4 sm:mb-6">
+    <div>
+      <h4 className="text-lg font-bold text-gray-900 font-space sm:text-xl md:text-2xl">
+        Upcoming Events
+      </h4>
+      <p className="mt-1 text-xs text-gray-600 font-space sm:text-[20px]">
+        Near You
+      </p>
+    </div>
+    <Link href="/events">
+      <button className="flex items-center text-sm font-medium text-black cursor-pointer font-inter sm:text-base group">
+        View All
+        <svg
+          className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </Link>
+  </div>
 
-          {/* Search Controls */}
-          <div className="flex flex-col gap-4 mb-6 sm:flex-row">
-            {/* Search Input */}
-            {/* <div className="flex flex-1 gap-2">
-              <input
-                type="text"
-                placeholder="Search events..."
-                value={searchText}
-                onChange={handleSearchChange}
-                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              // onKeyPress={(e) => e.key === 'Enter' && handleEventTypeChange()} // Optional: allow Enter key to trigger search
-              />
-              <button
-                onClick={searchEvents}
-                className="px-4 py-2 text-white transition-colors bg-purple-600 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              >
-                Search
-              </button>
-            </div> */}
+  {/* Search Controls */}
+  <div className="flex flex-col gap-4 mb-6 sm:flex-row">
+    {/* Search Input */}
+    {/* <div className="flex flex-1 gap-2">
+      <input
+        type="text"
+        placeholder="Search events..."
+        value={searchText}
+        onChange={handleSearchChange}
+        className="w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+      // onKeyPress={(e) => e.key === 'Enter' && handleEventTypeChange()} // Optional: allow Enter key to trigger search
+      />
+      <button
+        onClick={searchEvents}
+        className="px-4 py-2 text-white transition-colors bg-purple-600 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+      >
+        Search
+      </button>
+    </div> */}
 
-            {/* Event Type Selector */}
-            {/* <div className="sm:w-48">
-              <select
-                name='etype'
-                value={eventType}
-                onChange={handleEventTypeChange}
-                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              >
-                <option value="">All Event Types</option>
-                <option value="physical">Physical Events</option>
-                <option value="virtual">Online Events (Webinar/Live)</option>
-              </select>
-            </div> */}
-          </div>
+    {/* Event Type Selector */}
+    {/* <div className="sm:w-48">
+      <select
+        name='etype'
+        value={eventType}
+        onChange={handleEventTypeChange}
+        className="w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+      >
+        <option value="">All Event Types</option>
+        <option value="physical">Physical Events</option>
+        <option value="virtual">Online Events (Webinar/Live)</option>
+      </select>
+    </div> */}
+  </div>
 
-          {/* Events Grid - API Driven */}
-          {loading || isSearching ? (
-            <div className="flex items-center justify-center py-12">
-              <div className="w-8 h-8 border-4 border-purple-200 rounded-full border-t-purple-600 animate-spin"></div>
-            </div>
-          ) : events.length === 0 ? (
-            <div className="py-12 text-center">
-              <p className="text-gray-500">No events found. Try adjusting your search criteria.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-              {events.map((event: EventData) => (
-                <div key={event.eventRef} className="p-4 sm:p-5">
-                  <div className="flex items-start space-x-4">
-                    <div className="relative w-[101px] h-[101px] sm:w-[180px] sm:h-[180px] rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 flex-shrink-0 overflow-hidden">
-                      {event.backgroundImage ? (
-                        <Image
-                          src={event.backgroundImage}
-                          alt={event.eventTitle}
-                          width={150}
-                          height={150}
-                          className="object-cover w-full h-full"
-                          onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-                            e.currentTarget.style.display = 'none';
-                          }}
-                        />
-                      ) : (
-                        <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-purple-100 to-pink-100">
-                          <svg
-                            className="w-8 h-8 text-purple-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h5 className="font-inter font-bold text-black text-[14px] sm:text-[20px] sm:text-base mt-[10px] sm:mt-[15px] line-clamp-2">
-                        {event.eventTitle}
-                      </h5>
-                      <p className="font-inter text-[12px] sm:text-[16px] sm:text-sm text-black mt-[5px] sm:mt-[15px] truncate font-medium">
-                        @ {getLocationDisplay(event.eventLocation, event.eventLocationType)}
-                      </p>
-                      <p className="font-inter text-[12px] sm:text-[16px] font-semibold text-[#000000]/70 mt-[25px] sm:mt-[40px]">
-                        {isEventLive(event.startDateTime, event.endDateTime) && (
-                          <span className='text-red-800'>LIVE </span>
-                        )}
-                        {formatEventDate(event.startDateTime)}
-                      </p>
-                    </div>
+  {/* Events Grid - API Driven */}
+  {loading || isSearching ? (
+    <div className="flex items-center justify-center py-12">
+      <div className="w-8 h-8 border-4 border-purple-200 rounded-full border-t-purple-600 animate-spin"></div>
+    </div>
+  ) : events.length === 0 ? (
+    <div className="py-12 text-center">
+      <p className="text-gray-500">No events found. Try adjusting your search criteria.</p>
+    </div>
+  ) : (
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+      {events.map((event: EventData) => (
+        <Link 
+          key={event.eventRef} 
+          href={`https://app.figoevents.com/app/event/register/${event.eventRef}`}
+          className="block transition-transform duration-200 hover:scale-105"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="p-4 transition-colors duration-200 rounded-lg cursor-pointer sm:p-5 hover:bg-gray-50">
+            <div className="flex items-start space-x-4">
+              <div className="relative w-[101px] h-[101px] sm:w-[180px] sm:h-[180px] rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 flex-shrink-0 overflow-hidden shadow-md">
+                {event.backgroundImage ? (
+                  <Image
+                    src={event.backgroundImage}
+                    alt={event.eventTitle}
+                    width={150}
+                    height={150}
+                    className="object-cover w-full h-full transition-transform duration-200 hover:scale-110"
+                    onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                ) : (
+                  <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-purple-100 to-pink-100">
+                    <svg
+                      className="w-8 h-8 text-purple-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
                   </div>
+                )}
+              </div>
+              <div className="flex-1 min-w-0">
+                <h5 className="font-inter font-bold text-black text-[14px] sm:text-[20px] sm:text-base mt-[10px] sm:mt-[15px] line-clamp-2 group-hover:text-purple-700 transition-colors duration-200">
+                  {event.eventTitle}
+                </h5>
+                <p className="font-inter text-[12px] sm:text-[16px] sm:text-sm text-black mt-[5px] sm:mt-[15px] truncate font-medium">
+                  @ {getLocationDisplay(event.eventLocation, event.eventLocationType)}
+                </p>
+                <p className="font-inter text-[12px] sm:text-[16px] font-semibold text-[#000000]/70 mt-[25px] sm:mt-[40px]">
+                  {isEventLive(event.startDateTime, event.endDateTime) && (
+                    <span className='px-2 py-1 mr-2 text-xs text-red-800 rounded-full bg-red-100/50 animate-pulse'>LIVE</span>
+                  )}
+                  {formatEventDate(event.startDateTime)}
+                </p>
+                
+                {/* Click indicator */}
+                <div className="flex items-center mt-3 text-xs text-purple-600 transition-opacity duration-200 opacity-0 group-hover:opacity-100">
+                  <span>Click to register</span>
+                  <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </div>
-              ))}
+              </div>
             </div>
-          )}
-        </div>
+          </div>
+        </Link>
+      ))}
+    </div>
+  )}
+</div>
       </div>
     </section>
   );

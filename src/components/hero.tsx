@@ -125,7 +125,7 @@ const HeroSection = () => {
                     </p>
 
                     <a href="https://app.figoevents.com/app/signup" target="_blank" rel="noopener noreferrer">
-                    <button className="font-inter bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8">
+                    <button className="font-space bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8">
                         Create Your First Event
                     </button>
                     </a>
@@ -220,7 +220,7 @@ const HeroSection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <button className="mb-28 bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 cursor-pointer">
+                        <button className="font-space mb-28 bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 cursor-pointer">
                             Create Your First Event
                         </button>
                     </a>

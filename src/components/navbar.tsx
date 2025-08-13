@@ -34,15 +34,15 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div className="absolute left-0 right-0 flex items-center justify-center mx-auto w-fit">
           <div className='flex items-center space-x-8'>
-            <a href='#link' className={`transition-colors text-[16px] font-medium font-inter ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
+            <a href='#link' className={`transition-colors text-[16px] font-medium font-space ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
               }`}>
               About Us
             </a>
-            <a href="#pricing" className={`transition-colors text-[16px] font-light font-inter ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
+            <a href="#pricing" className={`transition-colors text-[16px] font-light font-space ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
               }`}>
               Pricing
             </a>
-            <a href="#faq" className={`transition-colors text-[16px] font-light font-inter ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
+            <a href="#faq" className={`transition-colors text-[16px] font-light font-space ${scrolled ? 'text-gray-800 hover:text-purple-600' : 'text-black hover:text-purple-300'
               }`}>
               FAQs
             </a>
@@ -52,7 +52,7 @@ const Navbar = () => {
         {/* Action Buttons */}
         <div className="flex items-center space-x-4">
           <a href="https://app.figoevents.com/app/index" target="_blank" rel="noopener noreferrer">
-            <button className={`text-[16px] font-medium font-inter cursor-pointer ${scrolled ? 'text-gray-800' : 'text-black'
+            <button className={`text-[16px] font-medium font-space cursor-pointer ${scrolled ? 'text-gray-800' : 'text-black'
               }`}>
               Sign in
             </button>
@@ -62,7 +62,7 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className={`px-4 py-2 rounded-[24px] text-[16px] font-medium font-inter border-[1.5px] transition-all cursor-pointer ${scrolled
+            <button className={`px-4 py-2 rounded-[24px] text-[16px] font-medium font-space border-[1.5px] transition-all cursor-pointer ${scrolled
                 ? 'text-gray-800 border-gray-800 hover:bg-gray-100/30'
                 : 'text-black border-white hover:bg-white/20'
               }`}>
@@ -123,7 +123,7 @@ const Navbar = () => {
     } backdrop-blur-xl border-t border-gray-200/30 shadow-lg`}>
       <div className="px-4 py-4">
         {/* Navigation Links */}
-        <div className="mb-4 space-y-1">
+        <div className="mb-4 space-y-1 font-space">
           {[
             { label: 'About Us', href: '#link' },
             { label: 'Pricing', href: '#pricing' },
@@ -146,7 +146,7 @@ const Navbar = () => {
           href="https://app.figoevents.com/app/index"
           target='_blank'>
           <button 
-            className="w-full px-3 py-2 font-medium text-left text-gray-800 transition-all rounded-md hover:text-purple-600 hover:bg-purple-50/50"
+            className="w-full px-3 py-2 font-medium text-left text-gray-800 transition-all rounded-md font-space hover:text-purple-600 hover:bg-purple-50/50"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Sign in
@@ -156,7 +156,7 @@ const Navbar = () => {
         href="https://app.figoevents.com/app/signup"
         target='_blank'>
         <button 
-            className="w-full px-4 py-2.5 bg-[#553286] hover:bg-purple-700 text-white rounded-md transition-colors font-medium shadow-sm"
+            className="font-space w-full px-4 py-2.5 bg-[#553286] hover:bg-purple-700 text-white rounded-md transition-colors font-medium shadow-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Get Started
