@@ -1,11 +1,13 @@
 'use client'
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
 const TestimonialCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(1); // Start at 1 to show real first slide
+  const [currentSlide, setCurrentSlide] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [cardWidth, setCardWidth] = useState(320);
+  const [gap, setGap] = useState(20);
 
   const testimonials = [
     {
@@ -18,7 +20,7 @@ const TestimonialCarousel = () => {
     {
       id: 2,
       quote: "It's amazing how easy it was to administer my birthday event using FigoEvents. From registration to check-ins. Really cool stuff.",
-      name: " Wiilams",
+      name: "Wiilams",
       title: "Event Manager",
       avatar: "/t3.jpeg"
     },
@@ -31,63 +33,77 @@ const TestimonialCarousel = () => {
     },
   ];
 
-  // Create extended array for seamless infinite scroll
   const extendedTestimonials = [
-    testimonials[testimonials.length - 1], // Last item at beginning
+    testimonials[testimonials.length - 1],
     ...testimonials,
-    testimonials[0] // First item at end
+    testimonials[0]
   ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCardWidth(260);
+        setGap(16);
+      } else {
+        setCardWidth(320);
+        setGap(20);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextSlide = () => {
     if (isTransitioning) return;
     
     setIsTransitioning(true);
-    
-    if (currentSlide === testimonials.length) {
-      // At the last real slide, go to duplicate first slide
-      setCurrentSlide(testimonials.length + 1);
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentSlide(1); // Jump back to real first slide without animation
-      }, 500);
-    } else {
-      setCurrentSlide((prev) => prev + 1);
-      setTimeout(() => setIsTransitioning(false), 500);
-    }
+    setCurrentSlide(prev => prev + 1);
   };
 
   const prevSlide = () => {
     if (isTransitioning) return;
     
     setIsTransitioning(true);
-    
-    if (currentSlide === 1) {
-      // At the first real slide, go to duplicate last slide
-      setCurrentSlide(0);
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentSlide(testimonials.length); // Jump to real last slide without animation
-      }, 500);
-    } else {
-      setCurrentSlide((prev) => prev - 1);
-      setTimeout(() => setIsTransitioning(false), 500);
-    }
+    setCurrentSlide(prev => prev - 1);
   };
 
-  // Get the transform value - center the current card with next card visible
+  useEffect(() => {
+    if (!isTransitioning) return;
+
+    const timer = setTimeout(() => {
+      if (currentSlide > testimonials.length) {
+        setCurrentSlide(1);
+        setIsTransitioning(false);
+      } else if (currentSlide < 1) {
+        setCurrentSlide(testimonials.length);
+        setIsTransitioning(false);
+      } else {
+        setIsTransitioning(false);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [currentSlide, isTransitioning]);
+
   const getTransform = () => {
-    const cardWidth = 340;
-    const containerWidth = 874;
-    const centerOffset = (containerWidth - 320) / 2; // Center the main card
-    return `translateX(${centerOffset - (currentSlide * cardWidth)}px)`;
+    const totalWidth = cardWidth + gap;
+    const centerPosition = -currentSlide * totalWidth;
+    
+    if (typeof window !== 'undefined') {
+      const containerWidth = window.innerWidth < 768 ? window.innerWidth - 32 : 874;
+      const centerOffset = (containerWidth - cardWidth) / 2;
+      return `translateX(${centerPosition + centerOffset}px)`;
+    }
+    
+    return `translateX(${centerPosition}px)`;
   };
 
   return (
     <section className="w-full px-4 py-12 overflow-hidden bg-gray-50 md:py-20">
       <div className="mx-auto max-w-7xl">
-        {/* Carousel Container */}
         <div className="relative flex justify-center">
-          {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
             disabled={isTransitioning}
@@ -104,92 +120,69 @@ const TestimonialCarousel = () => {
             <ChevronRight className="w-5 h-5 text-gray-600 md:w-6 md:h-6" />
           </button>
 
-          {/* Parent Card Container */}
           <div 
-            className="relative mx-4 overflow-hidden md:mx-0"
+            className="relative overflow-hidden"
             style={{
               width: '100%',
               maxWidth: '874px',
-              height: '406px'
+              height: 'auto',
+              minHeight: '380px'
             }}
           >
-            {/* Left Blur Overlay */}
-            <div className="absolute top-0 bottom-0 left-0 z-10 w-16 pointer-events-none md:w-24 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent"></div>
-            
-            {/* Right Blur Overlay */}
-            <div className="absolute top-0 bottom-0 right-0 z-10 w-16 pointer-events-none md:w-24 bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent"></div>
-
-            {/* Sliding Container */}
             <div 
               className={`flex h-full ${isTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
               style={{
                 transform: getTransform(),
-                width: `${extendedTestimonials.length * 340}px`
+                width: `${extendedTestimonials.length * (cardWidth + gap)}px`,
+                gap: `${gap}px`
               }}
             >
               {extendedTestimonials.map((testimonial, index) => (
                 <div
                   key={`${testimonial.id}-${index}`}
-                  className="flex-shrink-0 mr-5"
                   style={{
-                    width: '320px',
-                    height: '306px'
+                    width: `${cardWidth}px`,
+                    flexShrink: 0
                   }}
                 >
-                  <div 
-                    className="relative flex flex-col justify-between h-full bg-white shadow-sm"
-                    style={{
-                      borderRadius: '24px',
-                      padding: '6px'
-                    }}
-                  >
-                    {/* Testimonial Content */}
-                    <div className="flex flex-col justify-between flex-1 pt-8">
-                      {/* Quote Section */}
-                      <div className="flex-1">
-                        <blockquote 
-                          className="mb-4 text-gray-800"
-                          style={{
-                            fontFamily: 'Space Grotesk, sans-serif',
-                            fontWeight: '400',
-                            fontSize: '16px',
-                            lineHeight: '150%',
-                            letterSpacing: '0.32px'
-                          }}
-                        >
+                  <div className="relative flex flex-col justify-between h-full p-6 bg-white rounded-3xl shadow-sm min-h-[360px]">
+                    <div className="flex flex-col justify-between h-full">
+                      <div className="mb-4">
+                        <blockquote className="text-gray-800" style={{
+                          fontFamily: 'Space Grotesk, sans-serif',
+                          fontWeight: '400',
+                          fontSize: '16px',
+                          lineHeight: '150%',
+                          letterSpacing: '0.32px'
+                        }}>
                           {testimonial.quote}
                         </blockquote>
                       </div>
 
-                      {/* Author Section */}
-                      <div className="flex items-center gap-3 mt-4">
-                        <div className="flex-shrink-0 w-12 h-12 overflow-hidden rounded-full">
-                          <Image
-                            src={testimonial.avatar}
-                            alt={`${testimonial.name}'s profile`}
-                            width={48}
-                            height={48}
-                            className="object-cover w-full h-full"
-                          />
-                        </div>
-                        <div>
-                          <div 
-                            className="text-sm font-semibold text-gray-900"
-                            style={{
+                      <div className="mt-auto">
+                        <div className="flex items-center gap-3">
+                          <div className="flex-shrink-0 w-12 h-12 overflow-hidden rounded-full">
+                            <Image
+                              src={testimonial.avatar}
+                              alt={`${testimonial.name}'s profile`}
+                              width={48}
+                              height={48}
+                              className="object-cover w-full h-full"
+                            />
+                          </div>
+                          <div>
+                            <div className="text-sm font-semibold text-gray-900" style={{
                               fontFamily: 'Space Grotesk, sans-serif',
                               fontWeight: '600'
-                            }}
-                          >
-                            {testimonial.name}
-                          </div>
-                          <div 
-                            className="text-xs text-gray-600"
-                            style={{
+                            }}>
+                              {testimonial.name}
+                            </div>
+                            <div className="text-xs text-gray-600" style={{
                               fontFamily: 'Space Grotesk, sans-serif',
                               fontWeight: '400'
-                            }}
-                          >
-                            {testimonial.title}
+                            }}>
+                              {testimonial.title}
+                            </div>
                           </div>
                         </div>
                       </div>

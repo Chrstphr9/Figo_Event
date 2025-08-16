@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import { assets } from '@/assets/assets'
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,7 +28,9 @@ const Navbar = () => {
         {/* Logo Section */}
         <div className="flex items-center pl-10 space-x-8">
           <div className="w-40 h-36.98 items-center justify-center">
+            <Link href='/'>
             <Image src={assets.image1} alt="logo" />
+            </Link>
           </div>
         </div>
 

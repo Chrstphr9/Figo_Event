@@ -196,9 +196,9 @@ const HeroSection = () => {
             </div>
 
             {/* Mobile Version */}
-            <div className="px-4 py-18 md:hidden">
+            <div className="px-4 py-6 md:hidden">
                 {/* Header */}
-                <div className="mb-8 text-center">
+                <div className="mb-[-20px] text-center">
                 <div className="font-space w-fit h-10 py-3 px-4 text-[14px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-8 rounded-full mx-auto">
                     NEXT-GEN EVENT PLATFORM
                     </div>
@@ -227,7 +227,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Mobile Carousel - Single Row with 4 Images */}
-                <div className="flex justify-center mb-8">
+                <div className="flex justify-center mb-8 pt-[-40px]">
                     <div className="grid w-full max-w-sm grid-cols-4 gap-2">
                         <div className="w-[85.71px] h-[120px] bg-gray-200 rounded-lg overflow-hidden">
                             <Image src={assets.carousel_3} alt='img1' className="w-[85.71px] h-[120px] object-cover" />
