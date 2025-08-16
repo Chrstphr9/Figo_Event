@@ -196,14 +196,14 @@ const HeroSection = () => {
             </div>
 
             {/* Mobile Version */}
-            <div className="px-4 py-[40px] md:hidden">
+            <div className="px-4 py-[5px] md:hidden">
                 {/* Header */}
                 <div className="mb-[-20px] text-center">
                 <div className="font-space w-fit h-10 py-3 px-4 shadow-md text-[11px] bg-gradient-to-r from-[#E9E2FF99] via-[#E9E2FF99_60%] to-[#F6F0FF66_40%] font-medium text-black uppercase tracking-wide mb-8 rounded-full mx-auto border-2 border-[#ffffffcc]">
                     NEXT-GEN EVENT PLATFORM
                     </div>
 
-                    <h1 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl font-space">
+                    <h1 className="mb-3 text-3xl font-bold leading-tight sm:text-4xl font-space">
                         Run <span className="gradient-text">Smarter</span> Events,<br />
                         <span className="gradient-text">Connect</span> Every Guest
                     </h1>
