@@ -6,7 +6,7 @@ export default function Home() {
     <div id='link' className="relative w-full overflow-hidden min-h-10 bg-gradient-to-b from-white to-gray-600">
       {/* Mobile Layout (shown on lg breakpoint and below) */}
       <div 
-  className="relative flex flex-col h-screen px-4 py-8 lg:hidden"
+  className="relative flex flex-col px-4 py-8 h-[500px] lg:hidden"
   style={{
     background: 'linear-gradient(to top, #D7CBE5, #FAF8FF)'
   }}
