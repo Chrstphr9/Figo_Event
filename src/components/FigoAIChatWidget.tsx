@@ -92,7 +92,8 @@ const FigoAIChatWidget: React.FC = () => {
     };
   }, []);
 
-
+  // This component doesn't render anything visible itself
+  // The widget will be injected by the external script
   return null;
 };
 

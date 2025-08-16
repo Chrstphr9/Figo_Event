@@ -107,7 +107,7 @@ const HeroSection = () => {
                     {/* <Fade 
                     direction='down' 
                     delay={0.5}> */}
-                    <div className="font-space w-65 h-10 py-3 px-4 text-[16px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-4 rounded-full">
+                    <div className="font-space w-65 h-10 py-3 px-4 text-[16px] bg-gradient-to-r from-[#E9E2FF99] via-[#E9E2FF99_60%] to-[#F6F0FF66_40%] shadow-md font-medium text-black uppercase tracking-wide mb-4 rounded-full border-2 border-[#ffffff]">
                     NEXT-GEN EVENT PLATFORM
                     </div>
                     {/* </Fade> */}
@@ -125,7 +125,7 @@ const HeroSection = () => {
                     </p>
 
                     <a href="https://app.figoevents.com/app/signup" target="_blank" rel="noopener noreferrer">
-                    <button className="font-space bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8">
+                    <button className="font-space bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 mb-8 ">
                         Create Your First Event
                     </button>
                     </a>
@@ -196,19 +196,19 @@ const HeroSection = () => {
             </div>
 
             {/* Mobile Version */}
-            <div className="px-4 py-6 md:hidden">
+            <div className="px-4 py-[40px] md:hidden">
                 {/* Header */}
                 <div className="mb-[-20px] text-center">
-                <div className="font-space w-fit h-10 py-3 px-4 text-[14px] bg-[#C9B6FF40] font-medium text-black uppercase tracking-wide mb-8 rounded-full mx-auto">
+                <div className="font-space w-fit h-10 py-3 px-4 shadow-md text-[11px] bg-gradient-to-r from-[#E9E2FF99] via-[#E9E2FF99_60%] to-[#F6F0FF66_40%] font-medium text-black uppercase tracking-wide mb-8 rounded-full mx-auto border-2 border-[#ffffffcc]">
                     NEXT-GEN EVENT PLATFORM
                     </div>
 
-                    <h1 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl">
+                    <h1 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl font-space">
                         Run <span className="gradient-text">Smarter</span> Events,<br />
                         <span className="gradient-text">Connect</span> Every Guest
                     </h1>
 
-                    <p className="max-w-sm mx-auto mb-6 text-base leading-relaxed text-gray-600">
+                    <p className="max-w-sm mx-auto mb-6 text-base leading-relaxed text-gray-600 font-space">
                     Guests skip the awkward intros with smart digital cards while you enjoy seamless 
                     access control, effortless registration, and real-time analytics. Stay in full control as
                      our AI assistant handles everything from event planning to customer support 
@@ -220,7 +220,7 @@ const HeroSection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <button className="font-space mb-28 bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-8 py-3 text-[20px] rounded-[25px] font-semibold transition-all duration-300 cursor-pointer">
+                        <button className="font-space shadow-md mb-28 bg-gradient-to-r from-[#2A2438] to-[#1E1B2BCC]/80 hover:from-[#2A2438]/90 hover:to-[#1E1B2BCC]/90 text-white px-6 py-2 text-[20px] rounded-[25px] font-semibold transition-all duration-300 cursor-pointer">
                             Create Your First Event
                         </button>
                     </a>
@@ -259,7 +259,7 @@ const HeroSection = () => {
                 {/* Mobile Bottom Section */}
                 <div className="text-center">
                     <div className="flex items-center justify-center space-x-3">
-                        <div className="flex -space-x-2">
+                        <div className="flex -space-x-3">
                             <div className="w-6 h-6 bg-gray-300 border-2 border-white rounded-full">
                             <Image src={assets.ellipse17} alt='ys' />
                             </div>
@@ -273,7 +273,7 @@ const HeroSection = () => {
                             <Image src={assets.ellipse20} alt='ys' />
                             </div>
                         </div>
-                        <span className="text-xs text-gray-600">
+                        <span className="text-xs text-gray-600 font-space">
                             Join the <span className="font-medium text-pink-500">thousands</span> of event pros who swear by us
                         </span>
                     </div>
